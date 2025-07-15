@@ -1,0 +1,90 @@
+## Ignore pastas de build padrão do .NET
+bin/
+obj/
+
+## Ignore arquivos do Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Ignore arquivos de publicação
+Publish/
+
+## Ignore arquivos gerados por NuGet
+*.nupkg
+*.snupkg
+*.nuspec
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## Ignore arquivos de configurações locais
+*.vsconfig
+*.vscode/
+
+## Ignore arquivos temporários e logs
+*.log
+*.tlog/
+*.tmp
+*.temp
+*.cache
+
+## Ignore arquivos de sistema
+.DS_Store
+Thumbs.db
+
+## Ignore arquivos do Rider (JetBrains)
+.idea/
+*.sln.iml
+
+## Ignore pastas do Xamarin / MAUI (específicos)
+.android/
+*.apk
+*.ap_
+*.jar
+*.keystore
+
+.ios/
+*.app
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+.maui/
+.maui.android/
+.maui.ios/
+.maui.mac/
+.maui.windows/
+
+## Ignore arquivos de teste e cobertura
+TestResults/
+*.coverage
+*.coveragexml
+*.trx
+
+## Ignore arquivos gerados pelo MSBuild
+*.cachefile
+*.ilk
+*.meta
+*.obj
+*.pch
+*.pdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlh
+*.tli
+*.tmp_proj
+
+# Ignore arquivos binários
+*.exe
+*.dll
+*.pdb
+
+## Outros
+*.dbmdl
+*.bak
