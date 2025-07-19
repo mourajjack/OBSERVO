@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OBSERVO.Views.SelectCompany"
+             Title="SelectCompany">
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20" BackgroundColor="White">
+
+            <!-- Top image or logo -->
+            <Frame BackgroundColor="#8B008B" CornerRadius="0" HasShadow="False" Padding="0">
+                <VerticalStackLayout Padding="20" Spacing="10">
+                    <Label Text="OBSERVO"
+                           FontSize="36"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           HorizontalOptions="Center" />
+
+                    <Label Text="A facilidade OBSERVO, agora ao alcance das suas mãos"
+                           FontSize="16"
+                           TextColor="White"
+                           HorizontalOptions="Center"
+                           HorizontalTextAlignment="Center"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Pergunta -->
+            <Label Text="Qual é a sua empresa?"
+                   FontSize="18"
+                   TextColor="Black"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center" />
+
+            <!-- Input -->
+            <Entry Placeholder="Informe o nome, sem espaços"
+                   FontSize="16"
+                   BackgroundColor="Transparent"
+                   HeightRequest="50"
+                   TextColor="Black"
+                   PlaceholderColor="Gray"
+                   Margin="0,0,0,10"/>
+
+            <!-- Botão -->
+            <Button Text="PROSSEGUIR"
+                    BackgroundColor="#8B008B"
+                    TextColor="White"
+                    CornerRadius="8"
+                    HeightRequest="50"
+                    FontAttributes="Bold"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
