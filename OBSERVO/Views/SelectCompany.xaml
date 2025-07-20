@@ -44,6 +44,7 @@
 
             <!--  Input  -->
             <Entry
+                x:Name="CompanyName"
                 Margin="0,0,0,0"
                 BackgroundColor="Transparent"
                 FontSize="16"
@@ -62,10 +63,11 @@
                 Text="PROSSEGUIR"
                 TextColor="White" />
 
-            <Image x:Name="MinhaImagem"
-               WidthRequest="100"
-               HeightRequest="100"
-               Aspect="AspectFit" />
+            <Image
+                x:Name="MinhaImagem"
+                Aspect="AspectFit"
+                HeightRequest="177"
+                WidthRequest="177" />
 
 
         </VerticalStackLayout>

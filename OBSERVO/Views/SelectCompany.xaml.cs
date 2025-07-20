@@ -60,7 +60,9 @@ public partial class SelectCompany : ContentPage
 
     private async void OnPROSSEGUIR_Clicked(object sender, EventArgs e)
     {
-        var logo = await GetCompanyByName("CETSEG");
+        var logo = await GetCompanyByName(CompanyName.Text);
+
+        if(!string.IsNullOrEmpty(logo))
         MinhaImagem.Source = ImageSource.FromUri(new Uri(logo));
     }
 }
