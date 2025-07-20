@@ -1,51 +1,72 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="OBSERVO.Views.SelectCompany"
-             Title="SelectCompany">
+<ContentPage
+    x:Class="OBSERVO.Views.SelectCompany"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="SelectCompany">
     <ScrollView>
-        <VerticalStackLayout Padding="30" Spacing="20" BackgroundColor="White">
+        <VerticalStackLayout
+            Padding="30"
+            BackgroundColor="White"
+            Spacing="20">
 
-            <!-- Top image or logo -->
-            <Frame BackgroundColor="#8B008B" CornerRadius="0" HasShadow="False" Padding="0">
+            <!--  Top image or logo  -->
+            <Frame
+                Padding="0"
+                BackgroundColor="#8B008B"
+                CornerRadius="0"
+                HasShadow="False">
                 <VerticalStackLayout Padding="20" Spacing="10">
-                    <Label Text="OBSERVO"
-                           FontSize="36"
-                           FontAttributes="Bold"
-                           TextColor="White"
-                           HorizontalOptions="Center" />
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="36"
+                        HorizontalOptions="Center"
+                        Text="OBSERVO"
+                        TextColor="White" />
 
-                    <Label Text="A facilidade OBSERVO, agora ao alcance das suas mãos"
-                           FontSize="16"
-                           TextColor="White"
-                           HorizontalOptions="Center"
-                           HorizontalTextAlignment="Center"/>
+                    <Label
+                        FontSize="16"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Text="A facilidade OBSERVO, agora ao alcance das suas mãos"
+                        TextColor="White" />
                 </VerticalStackLayout>
             </Frame>
 
-            <!-- Pergunta -->
-            <Label Text="Qual é a sua empresa?"
-                   FontSize="18"
-                   TextColor="Black"
-                   HorizontalOptions="Center"
-                   HorizontalTextAlignment="Center" />
+            <!--  Pergunta  -->
+            <Label
+                Margin="0,20,0,0"
+                FontSize="18"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"
+                Text="Qual é a sua empresa?"
+                TextColor="Black" />
 
-            <!-- Input -->
-            <Entry Placeholder="Informe o nome, sem espaços"
-                   FontSize="16"
-                   BackgroundColor="Transparent"
-                   HeightRequest="50"
-                   TextColor="Black"
-                   PlaceholderColor="Gray"
-                   Margin="0,0,0,10"/>
+            <!--  Input  -->
+            <Entry
+                Margin="0,0,0,0"
+                BackgroundColor="Transparent"
+                FontSize="16"
+                HeightRequest="50"
+                Placeholder="Informe o nome, sem espaços"
+                PlaceholderColor="Gray"
+                TextColor="Black" />
 
-            <!-- Botão -->
-            <Button Text="PROSSEGUIR"
-                    BackgroundColor="#8B008B"
-                    TextColor="White"
-                    CornerRadius="8"
-                    HeightRequest="50"
-                    FontAttributes="Bold"/>
+            <!--  Botão  -->
+            <Button
+                BackgroundColor="#8B008B"
+                Clicked="OnPROSSEGUIR_Clicked"
+                CornerRadius="8"
+                FontAttributes="Bold"
+                HeightRequest="50"
+                Text="PROSSEGUIR"
+                TextColor="White" />
+
+            <Image x:Name="MinhaImagem"
+               WidthRequest="100"
+               HeightRequest="100"
+               Aspect="AspectFit" />
+
 
         </VerticalStackLayout>
     </ScrollView>
