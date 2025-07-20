@@ -7,11 +7,14 @@ namespace OBSERVO
         public App()
         {
             InitializeComponent();
+            MainPage = new NavigationPage(new SelectCompany());
         }
 
+        /*
         protected override Window CreateWindow(IActivationState? activationState)
         {
             return new Window(new SelectCompany());
         }
+        */
     }
 }

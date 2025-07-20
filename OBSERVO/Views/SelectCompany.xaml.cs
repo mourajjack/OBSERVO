@@ -63,6 +63,11 @@ public partial class SelectCompany : ContentPage
         var logo = await GetCompanyByName(CompanyName.Text);
 
         if(!string.IsNullOrEmpty(logo))
-        MinhaImagem.Source = ImageSource.FromUri(new Uri(logo));
+        {
+            //MinhaImagem.Source = ImageSource.FromUri(new Uri(logo));
+            //App.Current.MainPage = new NavigationPage(new LoginPage(logo));
+            await Navigation.PushAsync(new LoginPage(logo));
+        }
+        
     }
 }

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="OBSERVO.Views.LoginPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Entrar na minha conta">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20">
+            <!--  Top Header  -->
+
+            <!--  Logo  -->
+            <Image
+                x:Name="LogoEmpresa"
+                Aspect="AspectFit"
+                HeightRequest="100"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                WidthRequest="100" />
+
+            <!--  Campo Usuário  -->
+            <VerticalStackLayout Spacing="5">
+                <Label
+                    FontSize="16"
+                    Text="Usuário"
+                    TextColor="Black" />
+                <Entry
+                    BackgroundColor="Transparent"
+                    FontSize="16"
+                    HeightRequest="50"
+                    Placeholder="CPF, e-mail ou telefone"
+                    PlaceholderColor="Gray"
+                    TextColor="Black" />
+            </VerticalStackLayout>
+
+            <!--  Campo Senha  -->
+            <VerticalStackLayout Spacing="5">
+                <Label
+                    FontSize="16"
+                    Text="Senha"
+                    TextColor="Black" />
+                <Grid>
+                    <Entry
+                        x:Name="SenhaEntry"
+                        BackgroundColor="Transparent"
+                        FontSize="16"
+                        HeightRequest="50"
+                        IsPassword="True"
+                        Placeholder="Mínimo de 8 dígitos"
+                        PlaceholderColor="Gray"
+                        TextColor="Black" />
+                    <!--  Ícone de exibir senha  -->
+                    <Image
+                        Margin="0,0,10,0"
+                        HeightRequest="24"
+                        HorizontalOptions="End"
+                        Source="eye_icon.png"
+                        VerticalOptions="Center"
+                        WidthRequest="24" />
+                </Grid>
+            </VerticalStackLayout>
+
+            <!--  Esqueci minha senha  -->
+            <Label
+                FontSize="14"
+                HorizontalOptions="End"
+                Text="Esqueci minha senha"
+                TextColor="#8B008B" />
+
+            <!--  Botão Entrar  -->
+            <Button
+                BackgroundColor="#8B008B"
+                CornerRadius="8"
+                FontAttributes="Bold"
+                HeightRequest="50"
+                Text="ENTRAR"
+                TextColor="White" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
