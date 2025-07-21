@@ -1,4 +1,4 @@
-using System.Text.Json;
+﻿using System.Text.Json;
 
 namespace OBSERVO.Views;
 
@@ -18,7 +18,7 @@ public partial class SelectCompany : ContentPage
             var response = await _httpClient.GetAsync(API_DB_CONN.URI_SelectCompany + "?name=" + name);
             if (!response.IsSuccessStatusCode)
             {
-                throw new Exception("Wi-Fi erro. Verifique sua conex�o com a internet e tente novamente mais tarde!");
+                throw new Exception("Wi-Fi erro. Verifique sua conexão com a internet e tente novamente mais tarde!");
             }
 
             var dataString = await response.Content.ReadAsStringAsync();
@@ -33,12 +33,14 @@ public partial class SelectCompany : ContentPage
                 }
                 else
                 {
+                    await DisplayAlert(CompanyName.Text + "❓", "Empresa não encontrada. O nome da empresa não pode conter espaços", "OK");
                     return null;
                 }
             }
             else
             {
-                throw new Exception("Resposta vazia da API");
+                 await DisplayAlert("📶 ERRO de REDE", "Verifique sua Conexão com a Internet", "OK");
+                 return null;
             }
 
         }
@@ -60,7 +62,12 @@ public partial class SelectCompany : ContentPage
 
     private async void OnPROSSEGUIR_Clicked(object sender, EventArgs e)
     {
-        var logo = await GetCompanyByName(CompanyName.Text);
+        var logo = string.Empty;
+
+        if (!string.IsNullOrEmpty(CompanyName.Text))
+        {
+            logo = await GetCompanyByName(CompanyName.Text);
+        }
 
         if(!string.IsNullOrEmpty(logo))
         {
