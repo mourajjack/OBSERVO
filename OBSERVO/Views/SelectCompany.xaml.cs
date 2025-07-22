@@ -42,7 +42,7 @@ public partial class SelectCompany : ContentPage
             }
             else
             {
-                 await DisplayAlert("📶 ERRO de REDE", "Verifique sua Conexão com a Internet", "OK");
+                await DisplayAlert("📶 ERRO de REDE", "Verifique sua Conexão com a Internet", "OK");
                 string[] logo = new string[2];
                 return logo;
             }
@@ -50,7 +50,9 @@ public partial class SelectCompany : ContentPage
         }
         catch (Exception)
         {
-            throw new Exception("INTERNET ERRO");
+            await DisplayAlert("📶 ERRO DE REDE", "Verifique sua Conexão com a Internet", "OK");
+            string[] logo = new string[2];
+            return logo;
         }
     }
 
@@ -66,6 +68,13 @@ public partial class SelectCompany : ContentPage
 
     private async void OnPROSSEGUIR_Clicked(object sender, EventArgs e)
     {
+        //verificar se o usuário digitou alguma coisa;
+        if (string.IsNullOrEmpty(CompanyName.Text))
+            return;
+
+        LoadingIndicator.IsVisible = true;
+        LoadingIndicator.IsRunning = true;
+        OnPROSSEGUIR.IsEnabled = false;
         //Logo vai na [0],
         //name vai na [1];
         string[] logoAndName = new string[2];
@@ -90,6 +99,10 @@ public partial class SelectCompany : ContentPage
 
             await Navigation.PushAsync(pagina);
         }
-        
+
+        LoadingIndicator.IsVisible = false;
+        LoadingIndicator.IsRunning = false;
+        OnPROSSEGUIR.IsEnabled = true;
+
     }
 }
