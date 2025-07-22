@@ -7,9 +7,10 @@ public partial class LoginPage : ContentPage
 		InitializeComponent();
 	}
 
-	public LoginPage(string companyName)
+	public LoginPage(string[] logoAndName)
 	{
         InitializeComponent();
-        LogoEmpresa.Source = ImageSource.FromUri(new Uri(companyName));
+        LogoEmpresa.Source = ImageSource.FromUri(new Uri(logoAndName[0]));
+		//DisplayAlert("> ", logoAndName[1], "OK");
     }
 }

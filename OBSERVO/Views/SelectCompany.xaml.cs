@@ -9,7 +9,7 @@ public partial class SelectCompany : ContentPage
 		InitializeComponent();
 	}
 
-    public async Task<string> GetCompanyByName(string name)
+    public async Task<string[]> GetCompanyByName(string name)
     {
         try
             {
@@ -28,19 +28,23 @@ public partial class SelectCompany : ContentPage
                 var json = System.Text.Json.JsonDocument.Parse(dataString);
                 if (json.RootElement.GetProperty("success").GetBoolean())
                 {
-                    var logo = json.RootElement.GetProperty("logo").GetString();
+                    string[] logo = new string[2];
+                    logo[0] = json.RootElement.GetProperty("logo").GetString();
+                    logo[1] = json.RootElement.GetProperty("name").GetString();
                     return logo;
                 }
                 else
                 {
-                    await DisplayAlert(CompanyName.Text + "❓", "Empresa não encontrada. O nome da empresa não pode conter espaços", "OK");
-                    return null;
+                    await DisplayAlert(CompanyName.Text + "❓", "Empresa não encontrada. Verifique se o nome está correto.", "OK");
+                    string[] logo = new string[2];
+                    return logo;
                 }
             }
             else
             {
                  await DisplayAlert("📶 ERRO de REDE", "Verifique sua Conexão com a Internet", "OK");
-                 return null;
+                string[] logo = new string[2];
+                return logo;
             }
 
         }
@@ -62,18 +66,29 @@ public partial class SelectCompany : ContentPage
 
     private async void OnPROSSEGUIR_Clicked(object sender, EventArgs e)
     {
-        var logo = string.Empty;
+        //Logo vai na [0],
+        //name vai na [1];
+        string[] logoAndName = new string[2];
+        string companyName = CompanyName.Text.Replace(" ","");
 
-        if (!string.IsNullOrEmpty(CompanyName.Text))
+        if (!string.IsNullOrEmpty(companyName))
         {
-            logo = await GetCompanyByName(CompanyName.Text);
+            logoAndName = await GetCompanyByName(companyName);
         }
 
-        if(!string.IsNullOrEmpty(logo))
+        if (!string.IsNullOrEmpty(logoAndName[0]))
         {
             //MinhaImagem.Source = ImageSource.FromUri(new Uri(logo));
             //App.Current.MainPage = new NavigationPage(new LoginPage(logo));
-            await Navigation.PushAsync(new LoginPage(logo));
+
+            var pagina = new NavigationPage(
+                new LoginPage(logoAndName)
+                    );
+
+            pagina.BarBackgroundColor = Color.FromRgb(139, 0, 139);
+            pagina.BarTextColor = Color.FromRgb(219, 219, 219);
+
+            await Navigation.PushAsync(pagina);
         }
         
     }

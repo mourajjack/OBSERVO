@@ -49,7 +49,7 @@
                 BackgroundColor="Transparent"
                 FontSize="16"
                 HeightRequest="50"
-                Placeholder="Informe o nome, sem espaços"
+                Placeholder="Informe o nome"
                 PlaceholderColor="Gray"
                 TextColor="Black" />
 
