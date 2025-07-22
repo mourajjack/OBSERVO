@@ -1,4 +1,4 @@
-namespace OBSERVO.Views;
+ï»¿namespace OBSERVO.Views;
 
 public partial class LoginPage : ContentPage
 {
@@ -27,21 +27,26 @@ public partial class LoginPage : ContentPage
             // Sua URL do script
             var baseUrl = API_DB_CONN.URI_Colaboradores;
 
-            // Monta a URL com os parâmetros
+            // Monta a URL com os parÃ¢metros
             var url = $"{baseUrl}?nome={Uri.EscapeDataString(nomeEmpresa)}&usuario={Uri.EscapeDataString(usuario)}&senha={Uri.EscapeDataString(senha)}";
 
-            // Faz a requisição
+            // Faz a requisiÃ§Ã£o
             var response = await _httpClient.GetAsync(url);
 
             // Garante que deu sucesso
             response.EnsureSuccessStatusCode();
 
-            // Lê o conteúdo como string
-            var jsonString = await response.Content.ReadAsStringAsync();
+            if (!response.IsSuccessStatusCode)
+            {
+                await DisplayAlert("ðŸ“¶ ERRO de REDE", "Verifique sua ConexÃ£o com a Internet", "OK");
+                return;
+            }
 
+            // LÃª o conteÃºdo como string
+            var jsonString = await response.Content.ReadAsStringAsync();
             await DisplayAlert("Resposta:", jsonString, "OK");
 
-            // Se quiser, você pode desserializar para objeto:
+            // Se quiser, vocÃª pode desserializar para objeto:
             // var resultado = JsonSerializer.Deserialize<SeuModelo>(jsonString);
         }
         catch (Exception ex)
