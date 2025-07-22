@@ -4,21 +4,36 @@ namespace OBSERVO.Views;
 
 public partial class SelectCompany : ContentPage
 {
-	public SelectCompany()
+    private readonly HttpClient _httpClient;
+
+    public SelectCompany()
 	{
 		InitializeComponent();
-	}
+        _httpClient = new HttpClient();
+    }
 
     public async Task<string[]> GetCompanyByName(string name)
     {
         try
             {
-            HttpClient _httpClient = GetClient();
 
-            var response = await _httpClient.GetAsync(API_DB_CONN.URI_SelectCompany + "?name=" + name);
+            // Sua URL do script
+            var baseUrl = API_DB_CONN.URI_SelectCompany;
+
+            // Monta a URL com os parâmetros
+            var url = $"{baseUrl}?name={Uri.EscapeDataString(name)}";
+
+            // Faz a requisição
+            var response = await _httpClient.GetAsync(url);
+
+            // Garante que deu sucesso
+            response.EnsureSuccessStatusCode();
+
             if (!response.IsSuccessStatusCode)
             {
-                throw new Exception("Wi-Fi erro. Verifique sua conexão com a internet e tente novamente mais tarde!");
+                await DisplayAlert("📶 REDE", "Verifique sua Conexão com a Internet", "OK");
+                string[] logo = new string[2];
+                return logo;
             }
 
             var dataString = await response.Content.ReadAsStringAsync();
@@ -42,7 +57,7 @@ public partial class SelectCompany : ContentPage
             }
             else
             {
-                await DisplayAlert("📶 ERRO de REDE", "Verifique sua Conexão com a Internet", "OK");
+                await DisplayAlert("📶 REDE", "Verifique sua Conexão com a Internet", "OK");
                 string[] logo = new string[2];
                 return logo;
             }
@@ -54,16 +69,6 @@ public partial class SelectCompany : ContentPage
             string[] logo = new string[2];
             return logo;
         }
-    }
-
-    public HttpClient GetClient()
-    {
-        HttpClient client = new HttpClient();
-        client.Timeout = TimeSpan.FromSeconds(10);
-        client.DefaultRequestHeaders.Add("Accept", "Application/json");
-        client.DefaultRequestHeaders.Add("Connection", "close");
-        client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-        return client;
     }
 
     private async void OnPROSSEGUIR_Clicked(object sender, EventArgs e)
