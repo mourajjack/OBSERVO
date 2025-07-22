@@ -25,6 +25,7 @@
                     Text="Usuário"
                     TextColor="Black" />
                 <Entry
+                    x:Name="UsuarioEmpty"
                     BackgroundColor="Transparent"
                     FontSize="16"
                     HeightRequest="50"
@@ -70,6 +71,7 @@
             <!--  Botão Entrar  -->
             <Button
                 BackgroundColor="#8B008B"
+                Clicked="onENTRARClicked"
                 CornerRadius="8"
                 FontAttributes="Bold"
                 HeightRequest="50"

@@ -6,7 +6,7 @@ namespace OBSERVO
 {
     public static class API_DB_CONN
     {
-        public static string URI_SelectCompany { get; set; } = @"https://script.google.com/macros/s/AKfycbybpBK7UvEoY23vQXkZ9vM--OeKRw5F_2KsCeUTiMpPZ2KrJOtEPBVWnV3EfQCTbI_C0w/exec";
-        //public static string URI_RONDA { get; set; } = @"https://script.google.com/macros/s/AKfycbzJ4twcydKE2CRVyMQ10v2iHz3GVd6ZowjIRHGbpvOi83khMVgZJApq41MtXQgoUR8j1A/exec";
+        public static string URI_SelectCompany { get; set; } = @"https://script.google.com/macros/s/AKfycby73nD9tiMvUfw-Vop0BPurcsk7vzOv9niyQHsCgQ7P62Pp-_Zddl-ipfxnTzhiI_42ZQ/exec";
+        public static string URI_Colaboradores { get; set; } = @"https://script.google.com/macros/s/AKfycbwOggwGRkb3dOegRCDOhRIc1HMhWPICDhUHRtjI7zHvNGpgIKo7eyKzSrAcXcLI2iRczQ/exec";
     }
 }
