@@ -55,13 +55,21 @@ public partial class LoginPage : ContentPage
         }
     }
 
-    private void onENTRARClicked(object sender, EventArgs e)
+    private async void onENTRARClicked(object sender, EventArgs e)
     {
         if (string.IsNullOrEmpty(UsuarioEmpty.Text) || string.IsNullOrEmpty(SenhaEntry.Text))
             return;
 
+        LoadingIndicator.IsVisible = true;
+        LoadingIndicator.IsRunning = true;
+        BtnENTRAR.IsEnabled = false;
+
         string usuario = UsuarioEmpty.Text.Replace(".", "").Replace("-", "").Replace(" ", "");
 
-        BuscarFuncionarioAsync(nomeDaEmpresa, usuario, SenhaEntry.Text);
+        await BuscarFuncionarioAsync(nomeDaEmpresa, usuario, SenhaEntry.Text);
+
+        LoadingIndicator.IsVisible = false;
+        LoadingIndicator.IsRunning = false;
+        BtnENTRAR.IsEnabled = true;
     }
 }
