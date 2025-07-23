@@ -59,7 +59,7 @@ public partial class LoginPage : ContentPage
     {
         if (string.IsNullOrEmpty(UsuarioEmpty.Text) || string.IsNullOrEmpty(SenhaEntry.Text))
             return;
-
+        //
         LoadingIndicator.IsVisible = true;
         LoadingIndicator.IsRunning = true;
         BtnENTRAR.IsEnabled = false;
