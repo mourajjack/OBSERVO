@@ -61,7 +61,7 @@
                 FontAttributes="Bold"
                 HeightRequest="50"
                 Text="PROSSEGUIR"
-                TextColor="White" />
+                TextColor="White" ImageSource="prosseguir.png"/>
 
             <ActivityIndicator
                 x:Name="LoadingIndicator"

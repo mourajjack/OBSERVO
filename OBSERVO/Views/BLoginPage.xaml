@@ -76,6 +76,7 @@
                 CornerRadius="8"
                 FontAttributes="Bold"
                 HeightRequest="50"
+                ImageSource="prosseguir.png"
                 Text="ENTRAR"
                 TextColor="White" />
 
