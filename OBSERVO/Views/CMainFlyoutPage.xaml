@@ -11,7 +11,7 @@
     </FlyoutPage.Flyout>
 
     <FlyoutPage.Detail>
-        <NavigationPage>
+        <NavigationPage BarBackgroundColor="#8B008B" BarTextColor="White">
             <x:Arguments>
                 <pages:MainTabbedPage />
             </x:Arguments>
