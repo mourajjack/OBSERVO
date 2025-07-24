@@ -14,12 +14,18 @@
                 <Image
                     x:Name="UserPhoto"
                     Aspect="AspectFill"
-                    Clip="EllipseGeometry Center=60,60 RadiusX=60 RadiusY=60"
                     HeightRequest="120"
                     HorizontalOptions="Center"
                     IsVisible="False"
                     VerticalOptions="Center"
-                    WidthRequest="120" />
+                    WidthRequest="120">
+                    <Image.Clip>
+                        <EllipseGeometry
+                            Center="60,60"
+                            RadiusX="60"
+                            RadiusY="60" />
+                    </Image.Clip>
+                </Image>
 
                 <!--  Frame com as iniciais  -->
                 <Frame
@@ -47,7 +53,7 @@
                     BackgroundColor="White"
                     BorderWidth="4"
                     Clicked="OnChangePhotoClicked"
-                    CornerRadius="12"
+                    CornerRadius="100"
                     HeightRequest="24"
                     HorizontalOptions="Center"
                     Source="camera.png"
