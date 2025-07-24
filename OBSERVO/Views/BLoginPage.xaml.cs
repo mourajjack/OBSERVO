@@ -68,6 +68,8 @@ public partial class LoginPage : ContentPage
 
         await BuscarFuncionarioAsync(nomeDaEmpresa, usuario, SenhaEntry.Text);
 
+        App.Current.MainPage = new MainFlyoutPage();
+
         LoadingIndicator.IsVisible = false;
         LoadingIndicator.IsRunning = false;
         BtnENTRAR.IsEnabled = true;

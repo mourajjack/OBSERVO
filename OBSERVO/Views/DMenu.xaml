@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OBSERVO.Views.Menu"
+             Title="Menu">
+    <VerticalStackLayout>
+        <Label
+        FontSize="48"
+        HorizontalOptions="Center"
+        Text="M E N U"
+        VerticalOptions="Center" />
+        <Button TextColor="Black" BackgroundColor="Transparent" Text="Page 1" />
+        <Button TextColor="Black" BackgroundColor="Transparent" Text="Page 2" />
+        <Button TextColor="Black" BackgroundColor="Transparent" Text="Page 3" />
+    </VerticalStackLayout>
+</ContentPage>

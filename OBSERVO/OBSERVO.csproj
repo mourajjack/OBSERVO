@@ -66,22 +66,55 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Views\Holerite.xaml">
+	  <Compile Update="Views\ASelectCompany.xaml.cs">
+	    <DependentUpon>ASelectCompany.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\BLoginPage.xaml.cs">
+	    <DependentUpon>BLoginPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\CMainFlyoutPage.xaml.cs">
+	    <DependentUpon>CMainFlyoutPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\EMainTabbedPage.xaml.cs">
+	    <DependentUpon>EMainTabbedPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\FPonto.xaml.cs">
+	    <DependentUpon>FPonto.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\GHolerite.xaml.cs">
+	    <DependentUpon>GHolerite.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\HNotificacoes.xaml.cs">
+	    <DependentUpon>HNotificacoes.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\DMenu.xaml.cs">
+	    <DependentUpon>DMenu.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\GHolerite.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\LoginPage.xaml">
+	  <MauiXaml Update="Views\BLoginPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\MainTabbedPage.xaml">
+	  <MauiXaml Update="Views\CMainFlyoutPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Notificacoes.xaml">
+	  <MauiXaml Update="Views\EMainTabbedPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Ponto.xaml">
+	  <MauiXaml Update="Views\HNotificacoes.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\SelectCompany.xaml">
+	  <MauiXaml Update="Views\FPonto.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ASelectCompany.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\DMenu.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

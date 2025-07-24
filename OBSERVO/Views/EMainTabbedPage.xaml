@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage
+    x:Class="OBSERVO.Views.MainTabbedPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:android="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;assembly=Microsoft.Maui.Controls"
+    xmlns:pages="clr-namespace:OBSERVO.Views"
+    android:TabbedPage.ToolbarPlacement="Bottom"
+    BarBackground="AliceBlue"
+    SelectedTabColor="#8B008B"
+    UnselectedTabColor="Black">
+
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem
+            x:Name="NameCOLABORADOR"
+            Clicked="COLABORADORClick"
+            Text="J. JACKSON" />
+    </TabbedPage.ToolbarItems>
+
+    <pages:Ponto Title="Ponto" IconImageSource="ponto.png" />
+    <pages:Holerite Title="Holerite" IconImageSource="holeritee.png" />
+    <pages:Notificacoes Title="Notificações " IconImageSource="notificacoes.png" />
+
+</TabbedPage>
