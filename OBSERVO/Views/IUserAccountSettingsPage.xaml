@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="OBSERVO.Views.IUserAccountSettingsPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Informações do colaborador">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <!--  Foto de perfil  -->
+            <Grid>
+                <!--  Foto do usuário (começa invisível)  -->
+                <Image
+                    x:Name="UserPhoto"
+                    Aspect="AspectFill"
+                    Clip="EllipseGeometry Center=60,60 RadiusX=60 RadiusY=60"
+                    HeightRequest="120"
+                    HorizontalOptions="Center"
+                    IsVisible="False"
+                    VerticalOptions="Center"
+                    WidthRequest="120" />
+
+                <!--  Frame com as iniciais  -->
+                <Frame
+                    x:Name="InitialsFrame"
+                    Padding="30"
+                    BackgroundColor="#ccc"
+                    CornerRadius="80"
+                    HasShadow="False"
+                    HeightRequest="120"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="120">
+                    <Label
+                        x:Name="InitialsLabel"
+                        FontSize="36"
+                        HorizontalOptions="Center"
+                        Text="MS"
+                        TextColor="White"
+                        VerticalOptions="Center" />
+                </Frame>
+
+                <!--  Botão da câmera  -->
+                <ImageButton
+                    Margin="109,0,0,-5"
+                    BackgroundColor="White"
+                    BorderWidth="4"
+                    Clicked="OnChangePhotoClicked"
+                    CornerRadius="12"
+                    HeightRequest="24"
+                    HorizontalOptions="Center"
+                    Source="camera.png"
+                    VerticalOptions="End"
+                    WidthRequest="24" />
+            </Grid>
+
+            <!--  Nome  -->
+            <Label
+                FontAttributes="Bold"
+                FontSize="16"
+                HorizontalOptions="Center"
+                Text="CAIO VINICIUS CAVALCANTE GONCALVES" />
+
+            <!--  Função  -->
+            <Label
+                Margin="0,-15,0,0"
+                FontSize="14"
+                HorizontalOptions="Center"
+                Text="SERVENTE DE LIMPEZA"
+                TextColor="Gray" />
+
+            <!--  Login  -->
+            <Label
+                Margin="0,10,0,0"
+                FontAttributes="Bold"
+                FontSize="16"
+                Text="Login"
+                TextColor="#8B008B" />
+
+            <Frame
+                Padding="10"
+                BorderColor="#e0e0e0"
+                CornerRadius="6">
+                <VerticalStackLayout>
+                    <Label
+                        FontAttributes="Bold"
+                        Text="CPF"
+                        TextColor="Gray" />
+                    <Label Text="030.269.803-58" TextColor="Black" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame
+                Padding="10"
+                BorderColor="#e0e0e0"
+                CornerRadius="6">
+                <VerticalStackLayout>
+                    <Label
+                        FontAttributes="Bold"
+                        Text="Telefone"
+                        TextColor="Gray" />
+                    <Label Text="(89) 9429-9168" TextColor="Black" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame
+                Padding="10"
+                BorderColor="#e0e0e0"
+                CornerRadius="6">
+                <VerticalStackLayout>
+                    <Label
+                        FontAttributes="Bold"
+                        Text="E-mail"
+                        TextColor="Gray" />
+                    <Label Text="Nenhum email cadastrado" TextColor="Black" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame
+                Padding="10"
+                BorderColor="#e0e0e0"
+                CornerRadius="6">
+                <VerticalStackLayout>
+                    <Label
+                        FontAttributes="Bold"
+                        Text="Senha"
+                        TextColor="Gray" />
+                    <Label Text="******" TextColor="Black" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!--  Escala  -->
+            <Label
+                Margin="0,10,0,0"
+                FontAttributes="Bold"
+                FontSize="16"
+                Text="Escala"
+                TextColor="#8B008B" />
+            <Frame
+                Padding="10"
+                BorderColor="#ddd"
+                CornerRadius="8">
+                <Label
+                    FontSize="14"
+                    Text="06:00-10:00/12:00-16:00 SEG À SÁB"
+                    TextColor="Black" />
+            </Frame>
+
+            <!--  Empresa  -->
+            <Label
+                Margin="0,10,0,0"
+                FontAttributes="Bold"
+                FontSize="16"
+                Text="Empresa"
+                TextColor="#8B008B" />
+            <Frame
+                Padding="10"
+                BorderColor="#ddd"
+                CornerRadius="8">
+                <VerticalStackLayout Spacing="8">
+
+                    <Label FontAttributes="Bold" Text="Matrícula" />
+                    <Label Text="0196860" />
+
+                    <Label FontAttributes="Bold" Text="Posto" />
+                    <Label Text="UFPI - PICOS" />
+
+                    <Label FontAttributes="Bold" Text="Admissão" />
+                    <Label Text="06/06/2022" />
+
+                    <Label FontAttributes="Bold" Text="Empresa" />
+                    <Label Text="SERVFAZ SERVICOS DE MAO DE OBRA LTDA" />
+
+                    <Label FontAttributes="Bold" Text="CNPJ" />
+                    <Label Text="10.013.974/0001-63" />
+
+                </VerticalStackLayout>
+            </Frame>
+
+
+            <!--  Permissões  -->
+            <Label
+                Margin="0,10,0,0"
+                FontAttributes="Bold"
+                FontSize="16"
+                Text="Permissões"
+                TextColor="#8B008B" />
+
+            <Frame
+                Padding="10"
+                BorderColor="#e0e0e0"
+                CornerRadius="6">
+                <VerticalStackLayout>
+                    <Label
+                        FontAttributes="Bold"
+                        Text="Câmera"
+                        TextColor="Gray" />
+                    <Label Text="Ativado" TextColor="Black" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame
+                Padding="10"
+                BorderColor="#e0e0e0"
+                CornerRadius="6">
+                <VerticalStackLayout>
+                    <Label
+                        FontAttributes="Bold"
+                        Text="Localização"
+                        TextColor="Gray" />
+                    <Label Text="Ativado" TextColor="Black" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame
+                Padding="10"
+                BorderColor="#e0e0e0"
+                CornerRadius="6">
+                <VerticalStackLayout>
+                    <Label
+                        FontAttributes="Bold"
+                        Text="Armazenamento"
+                        TextColor="Gray" />
+                    <Label Text="Ativado" TextColor="Black" />
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
