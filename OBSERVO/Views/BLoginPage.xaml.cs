@@ -78,6 +78,7 @@ public partial class LoginPage : ContentPage
 
         if (!string.IsNullOrEmpty(funcionario))
         {
+            //vamos testar se o servidor retornou: (success: true)
             //vamos gravar na local db
 
         }
