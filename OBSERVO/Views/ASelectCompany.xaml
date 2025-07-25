@@ -2,80 +2,76 @@
 <ContentPage
     x:Class="OBSERVO.Views.SelectCompany"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="#F9F9F9">
+
     <ScrollView>
-        <VerticalStackLayout
-            Padding="20"
-            BackgroundColor="White"
-            Spacing="20">
+        <VerticalStackLayout Padding="30" Spacing="25">
 
-            <!--  Top image or logo  -->
+            <!-- Topo com logo e slogan -->
+            <VerticalStackLayout Spacing="8">
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="40"
+                    Text="OBSERVO"
+                    HorizontalOptions="Center"
+                    TextColor="#740874" />
+
+                <Label
+                    FontSize="16"
+                    HorizontalTextAlignment="Center"
+                    Text="A facilidade OBSERVO, agora ao alcance das suas mãos"
+                    TextColor="Gray" />
+            </VerticalStackLayout>
+
+            <!-- Pergunta -->
+            <Label
+                FontSize="18"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                Text="Qual é a sua empresa?"
+                TextColor="#740874" />
+
+            <!-- Campo de entrada -->
             <Frame
-                Padding="0"
-                BackgroundColor="#8B008B"
-                CornerRadius="10"
-                HasShadow="False">
-                <VerticalStackLayout Padding="20" Spacing="10">
-                    <Label
-                        FontAttributes="Bold"
-                        FontSize="36"
-                        HorizontalOptions="Center"
-                        Text="OBSERVO"
-                        TextColor="White" />
-
-                    <Label
-                        FontSize="16"
-                        HorizontalOptions="Center"
-                        HorizontalTextAlignment="Center"
-                        Text="A facilidade OBSERVO, agora ao alcance das suas mãos"
-                        TextColor="White" />
-                </VerticalStackLayout>
+                BackgroundColor="White"
+                CornerRadius="8"
+                Padding="5"
+                HasShadow="True">
+                <Entry
+                    x:Name="CompanyName"
+                    Placeholder="Informe o nome"
+                    PlaceholderColor="Gray"
+                    FontSize="15"
+                    TextColor="Black"
+                    BackgroundColor="Transparent" />
             </Frame>
 
-            <!--  Pergunta  -->
-            <Label
-                Margin="0,20,0,0"
-                FontSize="18"
-                HorizontalOptions="Center"
-                HorizontalTextAlignment="Center"
-                Text="Qual é a sua empresa?"
-                TextColor="Black" />
-
-            <!--  Input  -->
-            <Entry
-                x:Name="CompanyName"
-                Margin="0,0,0,0"
-                BackgroundColor="Transparent"
-                FontSize="16"
-                HeightRequest="50"
-                Placeholder="Informe o nome"
-                PlaceholderColor="Gray"
-                TextColor="Black" />
-
-            <!--  Botão  -->
+            <!-- Botão -->
             <Button
                 x:Name="OnPROSSEGUIR"
-                BackgroundColor="#8B008B"
-                Clicked="OnPROSSEGUIR_Clicked"
-                CornerRadius="8"
-                FontAttributes="Bold"
-                HeightRequest="50"
                 Text="PROSSEGUIR"
-                TextColor="White" ImageSource="prosseguir.png"/>
+                FontSize="15"
+                FontAttributes="Bold"
+                BackgroundColor="#740874"
+                TextColor="White"
+                CornerRadius="10"
+                HeightRequest="50"
+                Clicked="OnPROSSEGUIR_Clicked"
+                ImageSource="prosseguir.png"
+                HorizontalOptions="Fill" />
 
+            <!-- Loading -->
             <ActivityIndicator
                 x:Name="LoadingIndicator"
-                HeightRequest="50"
-                HorizontalOptions="Center"
                 IsRunning="False"
                 IsVisible="False"
-                VerticalOptions="Center"
-                WidthRequest="50"
-                Color="#8B008B" />
-
-
-
+                Color="#740874"
+                HeightRequest="40"
+                WidthRequest="40"
+                HorizontalOptions="Center" />
 
         </VerticalStackLayout>
     </ScrollView>
+
 </ContentPage>

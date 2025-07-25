@@ -3,7 +3,8 @@
     x:Class="OBSERVO.Views.LoginPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="Entrar na minha conta">
+    Title="Entrar na minha conta"
+    BackgroundColor="#F9F9F9">
 
     <ScrollView>
         <VerticalStackLayout Padding="30" Spacing="20">
@@ -66,15 +67,16 @@
                 FontSize="14"
                 HorizontalOptions="End"
                 Text="Esqueci minha senha"
-                TextColor="#8B008B" />
+                TextColor="#740874" />
 
             <!--  Botão Entrar  -->
             <Button
                 x:Name="BtnENTRAR"
-                BackgroundColor="#8B008B"
+                BackgroundColor="#740874"
                 Clicked="onENTRARClicked"
                 CornerRadius="8"
                 FontAttributes="Bold"
+                FontSize="15"
                 HeightRequest="50"
                 ImageSource="prosseguir.png"
                 Text="ENTRAR"
@@ -88,7 +90,7 @@
                 IsVisible="False"
                 VerticalOptions="Center"
                 WidthRequest="50"
-                Color="#8B008B" />
+                Color="#740874" />
 
         </VerticalStackLayout>
     </ScrollView>

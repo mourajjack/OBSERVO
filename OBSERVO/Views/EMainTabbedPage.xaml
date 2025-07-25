@@ -7,7 +7,7 @@
     xmlns:pages="clr-namespace:OBSERVO.Views"
     android:TabbedPage.ToolbarPlacement="Bottom"
     BarBackground="AliceBlue"
-    SelectedTabColor="#8B008B"
+    SelectedTabColor="#740874"
     UnselectedTabColor="Black">
 
     <TabbedPage.ToolbarItems>
