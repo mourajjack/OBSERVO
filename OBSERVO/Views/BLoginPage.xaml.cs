@@ -20,7 +20,7 @@ public partial class LoginPage : ContentPage
 		//DisplayAlert("> ", logoAndName[1], "OK");
     }
 
-    public async Task BuscarFuncionarioAsync(string nomeEmpresa, string usuario, string senha)
+    public async Task<string> BuscarFuncionarioAsync(string nomeEmpresa, string usuario, string senha)
     {
         try
         {
@@ -33,25 +33,27 @@ public partial class LoginPage : ContentPage
             // Faz a requisição
             var response = await _httpClient.GetAsync(url);
 
-            // Garante que deu sucesso
+            // Garante que deu sucesso, se o programa passar dessa linha deu bom.
             response.EnsureSuccessStatusCode();
-
+            //só pra garantir... nem precisava.
             if (!response.IsSuccessStatusCode)
             {
                 await DisplayAlert("📶 ERRO de REDE", "Verifique sua Conexão com a Internet", "OK");
-                return;
+                return string.Empty;
             }
 
-            // Lê o conteúdo como string
+            // Lê o conteúdo como string: ✔ Ele só lê o conteúdo da resposta que já foi baixado.
             var jsonString = await response.Content.ReadAsStringAsync();
-            await DisplayAlert("Resposta:", jsonString, "OK");
+            return jsonString;
+            //await DisplayAlert("Resposta:", jsonString, "OK");
 
             // Se quiser, você pode desserializar para objeto:
             // var resultado = JsonSerializer.Deserialize<SeuModelo>(jsonString);
         }
         catch (Exception ex)
         {
-            await DisplayAlert("Erro ao buscar dados", ex.Message, "OK");
+            await DisplayAlert("Erro ao buscar os dados", ex.Message, "OK");
+            return string.Empty;
         }
     }
 
@@ -67,7 +69,18 @@ public partial class LoginPage : ContentPage
 
         string usuario = UsuarioEmpty.Text.Replace(".", "").Replace("-", "").Replace(" ", "");
 
-        await BuscarFuncionarioAsync(nomeDaEmpresa, usuario, SenhaEntry.Text);
+
+        //BuscarFuncionarioAsync, busca as info
+        //xxxxxxxxxxxxxxxxxxxxxx, grava na local db
+        //se retornar true, posso chamar:  App.Current.MainPage = new MainFlyoutPage();
+
+        string funcionario = await BuscarFuncionarioAsync(nomeDaEmpresa, usuario, SenhaEntry.Text);
+
+        if (!string.IsNullOrEmpty(funcionario))
+        {
+            //vamos gravar na local db
+
+        }
 
         App.Current.MainPage = new MainFlyoutPage();
 
