@@ -10,12 +10,12 @@
 
             <!--  Topo com logo e slogan  -->
             <VerticalStackLayout Spacing="8">
-                <Image Source="camera.png" />
+                <Image Source="capaselectcompany.png" />
 
                 <Label
                     FontSize="16"
-                    HorizontalTextAlignment="Center"
-                    Text="A facilidade OBSERVO, agora ao alcance das suas mãos"
+                    HorizontalTextAlignment="Start"
+                    Text="A facilidade Gest-Seg, agora ao alcance das suas mãos"
                     TextColor="Gray" />
             </VerticalStackLayout>
 
@@ -28,20 +28,13 @@
                 TextColor="#740862" />
 
             <!--  Campo de entrada  -->
-            <Frame
-                Padding="5"
-                BackgroundColor="White"
-                CornerRadius="8"
-                HasShadow="True">
-                <Entry
+            <Entry
                     x:Name="CompanyName"
                     BackgroundColor="Transparent"
                     FontSize="15"
                     Placeholder="Informe o nome"
                     PlaceholderColor="Gray"
                     TextColor="Black" />
-            </Frame>
-
             <!--  Botão  -->
             <Button
                 x:Name="OnPROSSEGUIR"
@@ -54,6 +47,7 @@
                 HorizontalOptions="Fill"
                 ImageSource="prosseguir.png"
                 Text="PROSSEGUIR"
+                CharacterSpacing="0.8"
                 TextColor="White" />
 
             <!--  Loading  -->
