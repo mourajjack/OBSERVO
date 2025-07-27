@@ -8,7 +8,15 @@ namespace OBSERVO
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new SelectCompany());
+
+            var pagina = new NavigationPage(
+                new SelectCompany()
+                    );
+
+            pagina.BarBackgroundColor = Color.FromRgb(116, 8, 98);
+            pagina.BarTextColor = Color.FromRgb(219, 219, 219);
+
+            MainPage = pagina;
         }
 
         /*

@@ -13,7 +13,7 @@ public partial class MainTabbedPage : TabbedPage
                 new IUserAccountSettingsPage()
                     );
 
-        pagina.BarBackgroundColor = Color.FromRgb(116, 8, 116);
+        pagina.BarBackgroundColor = Color.FromRgb(116, 8, 98);
         pagina.BarTextColor = Color.FromRgb(219, 219, 219);
 
         await Navigation.PushAsync(pagina);

@@ -8,14 +8,9 @@
     <ScrollView>
         <VerticalStackLayout Padding="30" Spacing="25">
 
-            <!-- Topo com logo e slogan -->
+            <!--  Topo com logo e slogan  -->
             <VerticalStackLayout Spacing="8">
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="40"
-                    Text="OBSERVO"
-                    HorizontalOptions="Center"
-                    TextColor="#740874" />
+                <Image Source="camera.png" />
 
                 <Label
                     FontSize="16"
@@ -24,52 +19,52 @@
                     TextColor="Gray" />
             </VerticalStackLayout>
 
-            <!-- Pergunta -->
+            <!--  Pergunta  -->
             <Label
-                FontSize="18"
                 FontAttributes="Bold"
+                FontSize="18"
                 HorizontalOptions="Center"
                 Text="Qual é a sua empresa?"
-                TextColor="#740874" />
+                TextColor="#740862" />
 
-            <!-- Campo de entrada -->
+            <!--  Campo de entrada  -->
             <Frame
+                Padding="5"
                 BackgroundColor="White"
                 CornerRadius="8"
-                Padding="5"
                 HasShadow="True">
                 <Entry
                     x:Name="CompanyName"
+                    BackgroundColor="Transparent"
+                    FontSize="15"
                     Placeholder="Informe o nome"
                     PlaceholderColor="Gray"
-                    FontSize="15"
-                    TextColor="Black"
-                    BackgroundColor="Transparent" />
+                    TextColor="Black" />
             </Frame>
 
-            <!-- Botão -->
+            <!--  Botão  -->
             <Button
                 x:Name="OnPROSSEGUIR"
-                Text="PROSSEGUIR"
-                FontSize="15"
-                FontAttributes="Bold"
-                BackgroundColor="#740874"
-                TextColor="White"
-                CornerRadius="10"
-                HeightRequest="50"
+                BackgroundColor="#740862"
                 Clicked="OnPROSSEGUIR_Clicked"
+                CornerRadius="10"
+                FontAttributes="Bold"
+                FontSize="15"
+                HeightRequest="50"
+                HorizontalOptions="Fill"
                 ImageSource="prosseguir.png"
-                HorizontalOptions="Fill" />
+                Text="PROSSEGUIR"
+                TextColor="White" />
 
-            <!-- Loading -->
+            <!--  Loading  -->
             <ActivityIndicator
                 x:Name="LoadingIndicator"
+                HeightRequest="40"
+                HorizontalOptions="Center"
                 IsRunning="False"
                 IsVisible="False"
-                Color="#740874"
-                HeightRequest="40"
                 WidthRequest="40"
-                HorizontalOptions="Center" />
+                Color="#740862" />
 
         </VerticalStackLayout>
     </ScrollView>

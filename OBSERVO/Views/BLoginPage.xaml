@@ -67,12 +67,12 @@
                 FontSize="14"
                 HorizontalOptions="End"
                 Text="Esqueci minha senha"
-                TextColor="#740874" />
+                TextColor="#740862" />
 
             <!--  Botão Entrar  -->
             <Button
                 x:Name="BtnENTRAR"
-                BackgroundColor="#740874"
+                BackgroundColor="#740862"
                 Clicked="onENTRARClicked"
                 CornerRadius="8"
                 FontAttributes="Bold"
@@ -90,7 +90,7 @@
                 IsVisible="False"
                 VerticalOptions="Center"
                 WidthRequest="50"
-                Color="#740874" />
+                Color="#740862" />
 
         </VerticalStackLayout>
     </ScrollView>

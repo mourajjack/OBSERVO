@@ -99,7 +99,7 @@ public partial class SelectCompany : ContentPage
                 new LoginPage(logoAndName)
                     );
 
-            pagina.BarBackgroundColor = Color.FromRgb(139, 0, 139);
+            pagina.BarBackgroundColor = Color.FromRgb(116, 8, 98);
             pagina.BarTextColor = Color.FromRgb(219, 219, 219);
 
             await Navigation.PushAsync(pagina);
