@@ -13,6 +13,7 @@
                 <Image Source="capaselectcompany.png" />
 
                 <Label
+                    FontAttributes="Bold"
                     FontSize="16"
                     HorizontalTextAlignment="Start"
                     Text="A facilidade Gest-Seg, agora ao alcance das suas mãos"
@@ -29,16 +30,18 @@
 
             <!--  Campo de entrada  -->
             <Entry
-                    x:Name="CompanyName"
-                    BackgroundColor="Transparent"
-                    FontSize="15"
-                    Placeholder="Informe o nome"
-                    PlaceholderColor="Gray"
-                    TextColor="Black" />
+                x:Name="CompanyName"
+                BackgroundColor="Transparent"
+                FontAttributes="Bold"
+                FontSize="15"
+                Placeholder="Informe o nome"
+                PlaceholderColor="Gray"
+                TextColor="Black" />
             <!--  Botão  -->
             <Button
                 x:Name="OnPROSSEGUIR"
                 BackgroundColor="#740862"
+                CharacterSpacing="0.8"
                 Clicked="OnPROSSEGUIR_Clicked"
                 CornerRadius="10"
                 FontAttributes="Bold"
@@ -47,7 +50,6 @@
                 HorizontalOptions="Fill"
                 ImageSource="prosseguir.png"
                 Text="PROSSEGUIR"
-                CharacterSpacing="0.8"
                 TextColor="White" />
 
             <!--  Loading  -->
