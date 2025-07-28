@@ -81,7 +81,7 @@
                 FontAttributes="Bold"
                 FontSize="15"
                 HeightRequest="50"
-                ImageSource="prosseguir.png"
+                ImageSource="signin.png"
                 Text="ENTRAR"
                 TextColor="White" />
 

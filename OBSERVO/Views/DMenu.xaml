@@ -16,7 +16,11 @@
                FontSize="14"
                TextColor="Gray"
                HorizontalOptions="Start"
-               Margin="0,10,0,20" />
+               Margin="0,10,0,20">
+            <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnFecharMenuTapped" />
+              </Label.GestureRecognizers>
+        </Label>
 
         <!-- Corpo -->
         <StackLayout Grid.Row="1" Spacing="25">

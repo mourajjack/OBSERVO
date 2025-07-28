@@ -43,4 +43,9 @@ public partial class Menu : ContentPage
 
 		}
     }
+
+    private async void OnFecharMenuTapped(object sender, TappedEventArgs e)
+    {
+        ((FlyoutPage)Application.Current.MainPage).IsPresented = false;
+    }
 }
