@@ -1,10 +1,12 @@
 ﻿//using Java.Nio.Channels.Spi;
 using OBSERVO.Views;
+using OBSERVO.Services;
 
 namespace OBSERVO
 {
     public partial class App : Application
     {
+        static LocalDBServices localDB;
         public App()
         {
             InitializeComponent();
@@ -17,6 +19,18 @@ namespace OBSERVO
             pagina.BarTextColor = Color.FromRgb(219, 219, 219);
 
             MainPage = pagina;
+        }
+
+        public static LocalDBServices SQLiteDB
+        {
+            get
+            {
+                if (localDB == null)
+                {
+                    localDB = new LocalDBServices(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "GSLocal.db3"));
+                }
+                return localDB;
+            }
         }
 
         /*

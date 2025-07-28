@@ -1,4 +1,6 @@
-﻿namespace OBSERVO.Views;
+﻿using OBSERVO.Models;
+
+namespace OBSERVO.Views;
 
 public partial class LoginPage : ContentPage
 {
@@ -69,7 +71,6 @@ public partial class LoginPage : ContentPage
 
         string usuario = UsuarioEmpty.Text.Replace(".", "").Replace("-", "").Replace(" ", "");
 
-
         //BuscarFuncionarioAsync, busca as info
         //xxxxxxxxxxxxxxxxxxxxxx, grava na local db
         //se retornar true, posso chamar:  App.Current.MainPage = new MainFlyoutPage();
@@ -80,10 +81,63 @@ public partial class LoginPage : ContentPage
         {
             //vamos testar se o servidor retornou: (success: true)
             //vamos gravar na local db
+            var json = System.Text.Json.JsonDocument.Parse(funcionario);
+            if (json.RootElement.GetProperty("success").GetBoolean())
+            {
+                var colaborador = new Colaboradores
+                {
+                    Id = 0,
+                    Matricula = json.RootElement.GetProperty("matricula").GetString(),
+                    Nome = json.RootElement.GetProperty("nome").GetString(),
+                    Cpf = json.RootElement.GetProperty("cpf").GetString(),
+                    Senha = json.RootElement.GetProperty("senha").GetString(),
+                    DataNascimento = json.RootElement.GetProperty("dataDeNascimento").GetString(),
+                    Email = json.RootElement.GetProperty("email").GetString(),
+                    Telefone = json.RootElement.GetProperty("telefone").GetString(),
+                    Funcao = json.RootElement.GetProperty("funcao").GetString(),
+                    Escala = json.RootElement.GetProperty("escalaDeServico").GetString(),
+                    Posto = json.RootElement.GetProperty("postoDeServico").GetString(),
+                    DataAdmissao = json.RootElement.GetProperty("dataDaAdmissao").GetString(),
+                    Empresa = json.RootElement.GetProperty("empresa").GetString(),
+                    Cnpj = json.RootElement.GetProperty("cnpj").GetString()
+                };
 
+                //Salvar no db local:
+                try
+                {
+                    int result = await App.SQLiteDB.ColaboradorSaveAndUpdateInLocalDBAsync(colaborador);
+                    //int result = await App.SQLiteDB.ColaboradorDeleteItemAsync(colaborador);
+
+                    if (result > 0)
+                    {
+                        // Sucesso
+                        App.Current.MainPage = new MainFlyoutPage();
+                    }
+                    else
+                    {
+                        // Nenhuma linha afetada
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Log ou tratamento de erro
+                    await DisplayAlert("⚠ Erro ao salvar", ex.Message, "OK");
+                }
+
+            }
+            else
+            {
+                //
+                await DisplayAlert("⚠", "Colaborador não registrado", "OK");
+            }
+        }
+        else
+        {
+            await DisplayAlert("⚠ ERRO DE REDE", "Erro ao buscar colaborador", "OK");
+            //...
         }
 
-        App.Current.MainPage = new MainFlyoutPage();
+        //App.Current.MainPage = new MainFlyoutPage();
 
         LoadingIndicator.IsVisible = false;
         LoadingIndicator.IsRunning = false;

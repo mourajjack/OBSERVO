@@ -1,3 +1,5 @@
+using OBSERVO.Models;
+
 namespace OBSERVO.Views;
 
 public partial class MainTabbedPage : TabbedPage
@@ -5,6 +7,18 @@ public partial class MainTabbedPage : TabbedPage
 	public MainTabbedPage()
 	{
 		InitializeComponent();
+    }
+
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+
+        var colaborador = await App.SQLiteDB.ColaboradorGetAsync(0);
+
+        if (colaborador != null)
+            NameCOLABORADOR.Text = colaborador.Nome;
+        else
+            NameCOLABORADOR.Text = "Não encontrado";
     }
 
     private async void COLABORADORClick(object sender, EventArgs e)
