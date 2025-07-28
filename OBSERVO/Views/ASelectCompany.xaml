@@ -48,7 +48,7 @@
                 FontSize="15"
                 HeightRequest="50"
                 HorizontalOptions="Fill"
-                ImageSource="prosseguir.png"
+                ImageSource="signin.png"
                 Text="PROSSEGUIR"
                 TextColor="White" />
 
