@@ -12,13 +12,19 @@ public partial class MainTabbedPage : TabbedPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
+        try
+        {
+            var colaborador = await App.SQLiteDB.ColaboradorGetAsync(0);
 
-        var colaborador = await App.SQLiteDB.ColaboradorGetAsync(0);
-
-        if (colaborador != null)
-            NameCOLABORADOR.Text = colaborador.Nome;
-        else
-            NameCOLABORADOR.Text = "Não encontrado";
+            if (colaborador != null)
+                NameCOLABORADOR.Text = colaborador.Nome;
+            else
+                NameCOLABORADOR.Text = "Colaborador";
+        }
+        catch (Exception)
+        {
+            
+        }
     }
 
     private async void COLABORADORClick(object sender, EventArgs e)
