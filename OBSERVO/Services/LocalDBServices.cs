@@ -40,5 +40,20 @@ namespace OBSERVO.Services
         {
             return localDB.DeleteAsync(colaboradores);
         }
+
+        public async Task<bool> DeletarTabelaColaboradoresAsync()
+        {
+            try
+            {
+                await localDB.ExecuteAsync("DROP TABLE IF EXISTS Colaboradores");
+                return true; // sucesso
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao deletar tabela: {ex.Message}");
+                return false; // falha
+            }
+        }
+
     }
 }

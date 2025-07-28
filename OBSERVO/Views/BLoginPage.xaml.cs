@@ -115,20 +115,45 @@ public partial class LoginPage : ContentPage
                     }
                     else
                     {
-                        // Nenhuma linha afetada
+                        // Se der erro ao salvar ou cair em uma excepton
+                        //delete a tabela;
+                        if(await App.SQLiteDB.DeletarTabelaColaboradoresAsync())
+                        {
+                            //await DisplayAlert("result <= 0", "result <= 0", "OK");
+                        }
                     }
                 }
                 catch (Exception ex)
                 {
-                    // Log ou tratamento de erro
-                    await DisplayAlert("⚠ Erro ao salvar", ex.Message, "OK");
+                    // Se der erro ao salvar ou cair em uma excepton
+                    //delete a tabela;
+                    // Se der erro ao salvar ou cair em uma excepton
+                    //delete a tabela;
+                    if (await App.SQLiteDB.DeletarTabelaColaboradoresAsync())
+                    {
+                        //await DisplayAlert("Delete tabela", "deletado com sucesso", "OK");
+                        await DisplayAlert("⚠ Erro ao salvar", ex.Message, "OK");
+                    }
+
+                    FecharAplicativo();
+
+                    //Volta pro inicio
+                    var pagina = new NavigationPage(
+                    new SelectCompany()
+                    );
+
+                    pagina.BarBackgroundColor = Color.FromRgb(116, 8, 98);
+                    pagina.BarTextColor = Color.FromRgb(219, 219, 219);
+
+                    App.Current.MainPage = pagina;
+
                 }
 
             }
             else
             {
                 //
-                await DisplayAlert("⚠", "Colaborador não registrado", "OK");
+                await DisplayAlert("🚫 Acesso Negado", "Nome de usuário ou senha inválidos. Por favor, tente novamente.", "OK");
             }
         }
         else
@@ -142,5 +167,16 @@ public partial class LoginPage : ContentPage
         LoadingIndicator.IsVisible = false;
         LoadingIndicator.IsRunning = false;
         BtnENTRAR.IsEnabled = true;
+    }
+
+    public void FecharAplicativo()
+    {
+#if ANDROID
+        Android.OS.Process.KillProcess(Android.OS.Process.MyPid());
+#elif WINDOWS
+    System.Environment.Exit(0);
+#elif IOS
+    // Não recomendado! Apenas exibir uma mensagem ou retornar à tela inicial.
+#endif
     }
 }

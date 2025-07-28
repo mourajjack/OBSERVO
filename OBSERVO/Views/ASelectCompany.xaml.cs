@@ -10,6 +10,12 @@ public partial class SelectCompany : ContentPage
 	{
 		InitializeComponent();
         _httpClient = new HttpClient();
+
+        var loginPage = Navigation.NavigationStack.FirstOrDefault(p => p is LoginPage);
+        if (loginPage != null)
+        {
+            Navigation.RemovePage(loginPage);
+        }
     }
 
     protected override async void OnAppearing()
