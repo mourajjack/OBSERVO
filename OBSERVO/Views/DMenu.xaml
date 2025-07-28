@@ -72,7 +72,7 @@
         <Grid Grid.Row="2"
           Padding="10,20,10,30"
           ColumnSpacing="10"
-          Margin="0,10,0,0">
+          Margin="0,-12,0,-20">
             <!-- espaço entre a linha e o conteúdo -->
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -80,22 +80,27 @@
             </Grid.ColumnDefinitions>
 
             <Label Text="VERSÃO 1.0.0"
-               FontSize="12"
+               FontSize="14"
                TextColor="Gray"
                FontAttributes="Bold"
-               VerticalOptions="Center" />
+               VerticalOptions="Center" 
+               Margin="-10,0,0,0"
+               CharacterSpacing="0.8"/>
 
             <StackLayout Grid.Column="1" Orientation="Horizontal" Spacing="0">
-                <Image Source="signout.png"
-                   HeightRequest="16"
-                   WidthRequest="16"
-                   VerticalOptions="Center" />
+                <Image Source="logout.png"
+                   HeightRequest="14"
+                   WidthRequest="14"
+                   VerticalOptions="Center" 
+                       Margin="0,0,-4,0"/>
                 <Button Text="Sair da conta"
-                    FontSize="12"
+                    FontSize="14"
                     TextColor="Black"
                     BackgroundColor="Transparent"
                     VerticalOptions="Center"
-                    Clicked="Sair_Button_Clicked"/>
+                    Clicked="Sair_Button_Clicked" 
+                    Margin="0,0,-25,0" 
+                    CharacterSpacing="0.8" />
             </StackLayout>
         </Grid>
     </Grid>
