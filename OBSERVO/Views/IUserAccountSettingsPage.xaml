@@ -44,7 +44,8 @@
                         HorizontalOptions="Center"
                         Text="MS"
                         TextColor="White"
-                        VerticalOptions="Center" />
+                        VerticalOptions="Center" 
+                        CharacterSpacing="0.8"/>
                 </Frame>
 
                 <!--  Botão da câmera  -->
@@ -63,18 +64,20 @@
 
             <!--  Nome  -->
             <Label
+                x:Name="NomeColaborador"
                 FontAttributes="Bold"
                 FontSize="16"
                 HorizontalOptions="Center"
-                Text="CAIO VINICIUS CAVALCANTE GONCALVES" />
+                CharacterSpacing="0.8" />
 
             <!--  Função  -->
             <Label
+                x:Name="Funcao"
                 Margin="0,-15,0,0"
-                FontSize="14"
+                FontSize="15"
                 HorizontalOptions="Center"
-                Text="SERVENTE DE LIMPEZA"
-                TextColor="Gray" />
+                TextColor="Gray" 
+                CharacterSpacing="0.8" />
 
             <!--  Login  -->
             <Label
@@ -82,7 +85,8 @@
                 FontAttributes="Bold"
                 FontSize="16"
                 Text="Login"
-                TextColor="#8B008B" />
+                TextColor="#8B008B" 
+                CharacterSpacing="0.8"/>
 
             <Frame
                 Padding="10"
@@ -93,7 +97,7 @@
                         FontAttributes="Bold"
                         Text="CPF"
                         TextColor="Gray" />
-                    <Label Text="030.269.803-58" TextColor="Black" />
+                    <Label x:Name="Cpf" TextColor="Black" CharacterSpacing="0.1"/>
                 </VerticalStackLayout>
             </Frame>
 
@@ -106,7 +110,7 @@
                         FontAttributes="Bold"
                         Text="Telefone"
                         TextColor="Gray" />
-                    <Label Text="(89) 9429-9168" TextColor="Black" />
+                    <Label x:Name="Telefone" TextColor="Black" CharacterSpacing="0.1"/>
                 </VerticalStackLayout>
             </Frame>
 
@@ -119,7 +123,7 @@
                         FontAttributes="Bold"
                         Text="E-mail"
                         TextColor="Gray" />
-                    <Label Text="Nenhum email cadastrado" TextColor="Black" />
+                    <Label x:Name="Email" TextColor="Black" CharacterSpacing="0.2"/>
                 </VerticalStackLayout>
             </Frame>
 
@@ -132,7 +136,7 @@
                         FontAttributes="Bold"
                         Text="Senha"
                         TextColor="Gray" />
-                    <Label Text="******" TextColor="Black" />
+                    <Label Text="******" TextColor="Black" CharacterSpacing="0.2"/>
                 </VerticalStackLayout>
             </Frame>
 
@@ -142,15 +146,16 @@
                 FontAttributes="Bold"
                 FontSize="16"
                 Text="Escala"
-                TextColor="#8B008B" />
+                TextColor="#8B008B" 
+                CharacterSpacing="0.8"/>
             <Frame
                 Padding="10"
                 BorderColor="#ddd"
                 CornerRadius="8">
                 <Label
+                    x:Name="Escala"
                     FontSize="14"
-                    Text="06:00-10:00/12:00-16:00 SEG À SÁB"
-                    TextColor="Black" />
+                    TextColor="Black" CharacterSpacing="0.2"/>
             </Frame>
 
             <!--  Empresa  -->
@@ -159,27 +164,28 @@
                 FontAttributes="Bold"
                 FontSize="16"
                 Text="Empresa"
-                TextColor="#8B008B" />
+                TextColor="#8B008B" 
+                CharacterSpacing="0.8"/>
             <Frame
                 Padding="10"
                 BorderColor="#ddd"
                 CornerRadius="8">
                 <VerticalStackLayout Spacing="8">
 
-                    <Label FontAttributes="Bold" Text="Matrícula" />
-                    <Label Text="0196860" />
+                    <Label FontAttributes="Bold" Text="Matrícula" CharacterSpacing="0.8"/>
+                    <Label x:Name="Matricula" CharacterSpacing="0.2"/>
 
-                    <Label FontAttributes="Bold" Text="Posto" />
-                    <Label Text="UFPI - PICOS" />
+                    <Label FontAttributes="Bold" Text="Posto" CharacterSpacing="0.8"/>
+                    <Label x:Name="Posto" CharacterSpacing="0.8"/>
 
-                    <Label FontAttributes="Bold" Text="Admissão" />
-                    <Label Text="06/06/2022" />
+                    <Label FontAttributes="Bold" Text="Admissão" CharacterSpacing="0.8"/>
+                    <Label x:Name="Admissao" CharacterSpacing="0.8"/>
 
-                    <Label FontAttributes="Bold" Text="Empresa" />
-                    <Label Text="SERVFAZ SERVICOS DE MAO DE OBRA LTDA" />
+                    <Label FontAttributes="Bold" Text="Empresa" CharacterSpacing="0.8"/>
+                    <Label x:Name="Empresa" CharacterSpacing="0.5"/>
 
-                    <Label FontAttributes="Bold" Text="CNPJ" />
-                    <Label Text="10.013.974/0001-63" />
+                    <Label FontAttributes="Bold" Text="CNPJ" CharacterSpacing="0.8"/>
+                    <Label x:Name="Cnpj" CharacterSpacing="0.5"/>
 
                 </VerticalStackLayout>
             </Frame>
@@ -191,7 +197,8 @@
                 FontAttributes="Bold"
                 FontSize="16"
                 Text="Permissões"
-                TextColor="#8B008B" />
+                TextColor="#8B008B" 
+                CharacterSpacing="0.8" />
 
             <Frame
                 Padding="10"
@@ -201,8 +208,9 @@
                     <Label
                         FontAttributes="Bold"
                         Text="Câmera"
-                        TextColor="Gray" />
-                    <Label Text="Ativado" TextColor="Black" />
+                        TextColor="Gray" 
+                        CharacterSpacing="0.8"/>
+                    <Label Text="Ativado" TextColor="Black" CharacterSpacing="0.8"/>
                 </VerticalStackLayout>
             </Frame>
 
@@ -214,8 +222,9 @@
                     <Label
                         FontAttributes="Bold"
                         Text="Localização"
-                        TextColor="Gray" />
-                    <Label Text="Ativado" TextColor="Black" />
+                        TextColor="Gray" 
+                        CharacterSpacing="0.8"/>
+                    <Label Text="Ativado" TextColor="Black" CharacterSpacing="0.8"/>
                 </VerticalStackLayout>
             </Frame>
 
@@ -227,8 +236,8 @@
                     <Label
                         FontAttributes="Bold"
                         Text="Armazenamento"
-                        TextColor="Gray" />
-                    <Label Text="Ativado" TextColor="Black" />
+                        TextColor="Gray" CharacterSpacing="0.8"/>
+                    <Label Text="Ativado" TextColor="Black" CharacterSpacing="0.8"/>
                 </VerticalStackLayout>
             </Frame>
 
