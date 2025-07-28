@@ -11,6 +11,8 @@ namespace OBSERVO
         {
             InitializeComponent();
 
+            //Testar para saber se tem usuário logado:
+
             var pagina = new NavigationPage(
                 new SelectCompany()
                     );

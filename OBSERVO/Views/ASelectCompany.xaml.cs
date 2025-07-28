@@ -12,6 +12,22 @@ public partial class SelectCompany : ContentPage
         _httpClient = new HttpClient();
     }
 
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+        try
+        {
+            var colaborador = await App.SQLiteDB.ColaboradorGetAsync(0);
+            if (colaborador != null)
+                App.Current.MainPage = new MainFlyoutPage();
+        }
+        catch (Exception)
+        {
+            //return false;
+        }
+
+    }
+
     public async Task<string[]> GetCompanyByName(string name)
     {
         try

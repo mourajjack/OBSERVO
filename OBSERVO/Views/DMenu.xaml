@@ -11,6 +11,6 @@
         VerticalOptions="Center" />
         <Button TextColor="Black" BackgroundColor="Transparent" Text="Page 1" />
         <Button TextColor="Black" BackgroundColor="Transparent" Text="Page 2" />
-        <Button TextColor="Black" BackgroundColor="Transparent" Text="Page 3" />
+        <Button TextColor="Black" BackgroundColor="Transparent" Text="Sair" Clicked="Sair_Button_Clicked"/>
     </VerticalStackLayout>
 </ContentPage>
