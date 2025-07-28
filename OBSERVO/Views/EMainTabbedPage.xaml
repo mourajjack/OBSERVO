@@ -11,10 +11,7 @@
     UnselectedTabColor="Black">
 
     <TabbedPage.ToolbarItems>
-        <ToolbarItem
-            x:Name="NameCOLABORADOR"
-            Clicked="COLABORADORClick"
-            Text="J. JACKSON" />
+        <ToolbarItem x:Name="NameCOLABORADOR" Clicked="COLABORADORClick" />
     </TabbedPage.ToolbarItems>
 
     <pages:Ponto Title="Ponto" IconImageSource="ponto.png" />

@@ -1,4 +1,4 @@
-using OBSERVO.Models;
+﻿using OBSERVO.Models;
 
 namespace OBSERVO.Views;
 
@@ -18,9 +18,8 @@ public partial class MainTabbedPage : TabbedPage
 
             if (colaborador != null)
             {
-                NameCOLABORADOR.Text = colaborador.Nome;
+                NameCOLABORADOR.Text = ObterNomeEPrimeiroSobrenome(colaborador.Nome) + "   ❯";
             }
-                
             else
             {
                 //volta pro inicio
@@ -46,6 +45,19 @@ public partial class MainTabbedPage : TabbedPage
 
             App.Current.MainPage = pagina;
         }
+    }
+
+    public string ObterNomeEPrimeiroSobrenome(string nomeCompleto)
+    {
+        if (string.IsNullOrWhiteSpace(nomeCompleto))
+            return string.Empty;
+
+        var partes = nomeCompleto.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+        if (partes.Length >= 2)
+            return $"{partes[0]} {partes[1]}"; // nome + primeiro sobrenome
+        else
+            return nomeCompleto.Trim(); // se tiver só o primeiro nome
     }
 
     private async void COLABORADORClick(object sender, EventArgs e)
