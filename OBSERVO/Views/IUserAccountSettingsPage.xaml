@@ -40,12 +40,12 @@
                     WidthRequest="120">
                     <Label
                         x:Name="InitialsLabel"
+                        CharacterSpacing="0.8"
                         FontSize="36"
                         HorizontalOptions="Center"
                         Text="MS"
                         TextColor="White"
-                        VerticalOptions="Center" 
-                        CharacterSpacing="0.8"/>
+                        VerticalOptions="Center" />
                 </Frame>
 
                 <!--  Botão da câmera  -->
@@ -65,28 +65,28 @@
             <!--  Nome  -->
             <Label
                 x:Name="NomeColaborador"
+                CharacterSpacing="0.8"
                 FontAttributes="Bold"
                 FontSize="16"
-                HorizontalOptions="Center"
-                CharacterSpacing="0.8" />
+                HorizontalOptions="Center" />
 
             <!--  Função  -->
             <Label
                 x:Name="Funcao"
                 Margin="0,-15,0,0"
+                CharacterSpacing="0.8"
                 FontSize="15"
                 HorizontalOptions="Center"
-                TextColor="Gray" 
-                CharacterSpacing="0.8" />
+                TextColor="Gray" />
 
             <!--  Login  -->
             <Label
                 Margin="0,10,0,0"
+                CharacterSpacing="0.8"
                 FontAttributes="Bold"
                 FontSize="16"
                 Text="Login"
-                TextColor="#8B008B" 
-                CharacterSpacing="0.8"/>
+                TextColor="#8B008B" />
 
             <Frame
                 Padding="10"
@@ -97,95 +97,180 @@
                         FontAttributes="Bold"
                         Text="CPF"
                         TextColor="Gray" />
-                    <Label x:Name="Cpf" TextColor="Black" CharacterSpacing="0.1"/>
+                    <Label
+                        x:Name="Cpf"
+                        CharacterSpacing="0.1"
+                        TextColor="Black" />
                 </VerticalStackLayout>
             </Frame>
-
+            <!--  Telefone  -->
             <Frame
                 Padding="10"
                 BorderColor="#e0e0e0"
-                CornerRadius="6">
-                <VerticalStackLayout>
-                    <Label
-                        FontAttributes="Bold"
-                        Text="Telefone"
-                        TextColor="Gray" />
-                    <Label x:Name="Telefone" TextColor="Black" CharacterSpacing="0.1"/>
-                </VerticalStackLayout>
-            </Frame>
+                CornerRadius="6"
+                HasShadow="False">
 
+                <Grid ColumnDefinitions="*,Auto">
+                    <!--  Informações de telefone  -->
+                    <VerticalStackLayout Grid.Column="0">
+                        <Label
+                            FontAttributes="Bold"
+                            Text="Telefone"
+                            TextColor="Gray" />
+                        <Label
+                            x:Name="Telefone"
+                            CharacterSpacing="0.1"
+                            TextColor="Black" />
+                    </VerticalStackLayout>
+
+                    <!--  Seta ">" à direita  -->
+                    <Label
+                        Grid.Column="1"
+                        Margin="10,0,0,0"
+                        FontSize="20"
+                        Text=" ❯"
+                        TextColor="Gray"
+                        VerticalOptions="Center" />
+
+                    <!--  Clique no Frame  -->
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTelefoneTapped" />
+                    </Grid.GestureRecognizers>
+                </Grid>
+            </Frame>
+            <!--  Email  -->
             <Frame
                 Padding="10"
                 BorderColor="#e0e0e0"
-                CornerRadius="6">
-                <VerticalStackLayout>
-                    <Label
-                        FontAttributes="Bold"
-                        Text="E-mail"
-                        TextColor="Gray" />
-                    <Label x:Name="Email" TextColor="Black" CharacterSpacing="0.2"/>
-                </VerticalStackLayout>
-            </Frame>
+                CornerRadius="6"
+                HasShadow="False">
 
+                <Grid ColumnDefinitions="*,Auto">
+                    <!--  Área de texto  -->
+                    <VerticalStackLayout Grid.Column="0">
+                        <Label
+                            FontAttributes="Bold"
+                            Text="E-mail"
+                            TextColor="Gray" />
+                        <Label
+                            x:Name="Email"
+                            CharacterSpacing="0.2"
+                            TextColor="Black" />
+                    </VerticalStackLayout>
+
+                    <!--  Setinha ">" à direita  -->
+                    <Label
+                        Grid.Column="1"
+                        Margin="10,0,0,0"
+                        FontSize="20"
+                        Text=" ❯"
+                        TextColor="Gray"
+                        VerticalOptions="Center" />
+
+                    <!--  Clique no Frame  -->
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnEmailTapped" />
+                    </Grid.GestureRecognizers>
+                </Grid>
+            </Frame>
+            <!--  Senha  -->
             <Frame
                 Padding="10"
                 BorderColor="#e0e0e0"
-                CornerRadius="6">
-                <VerticalStackLayout>
+                CornerRadius="6"
+                HasShadow="False">
+
+                <Grid ColumnDefinitions="*,Auto">
+                    <!--  Área de texto  -->
+                    <VerticalStackLayout Grid.Column="0">
+                        <Label
+                            FontAttributes="Bold"
+                            Text="Senha"
+                            TextColor="Gray" />
+                        <Label
+                            CharacterSpacing="0.2"
+                            Text="******"
+                            TextColor="Black" />
+                    </VerticalStackLayout>
+
+                    <!--  Setinha ">" à direita  -->
                     <Label
-                        FontAttributes="Bold"
-                        Text="Senha"
-                        TextColor="Gray" />
-                    <Label Text="******" TextColor="Black" CharacterSpacing="0.2"/>
-                </VerticalStackLayout>
+                        Grid.Column="1"
+                        Margin="10,0,0,0"
+                        FontSize="20"
+                        Text=" ❯"
+                        TextColor="Gray"
+                        VerticalOptions="Center" />
+
+                    <!--  Gesto de toque no Frame inteiro  -->
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnSenhaTapped" />
+                    </Grid.GestureRecognizers>
+                </Grid>
             </Frame>
 
             <!--  Escala  -->
             <Label
                 Margin="0,10,0,0"
+                CharacterSpacing="0.8"
                 FontAttributes="Bold"
                 FontSize="16"
                 Text="Escala"
-                TextColor="#8B008B" 
-                CharacterSpacing="0.8"/>
+                TextColor="#8B008B" />
             <Frame
                 Padding="10"
                 BorderColor="#ddd"
                 CornerRadius="8">
                 <Label
                     x:Name="Escala"
+                    CharacterSpacing="0.2"
                     FontSize="14"
-                    TextColor="Black" CharacterSpacing="0.2"/>
+                    TextColor="Black" />
             </Frame>
 
             <!--  Empresa  -->
             <Label
                 Margin="0,10,0,0"
+                CharacterSpacing="0.8"
                 FontAttributes="Bold"
                 FontSize="16"
                 Text="Empresa"
-                TextColor="#8B008B" 
-                CharacterSpacing="0.8"/>
+                TextColor="#8B008B" />
             <Frame
                 Padding="10"
                 BorderColor="#ddd"
                 CornerRadius="8">
                 <VerticalStackLayout Spacing="8">
 
-                    <Label FontAttributes="Bold" Text="Matrícula" CharacterSpacing="0.8"/>
-                    <Label x:Name="Matricula" CharacterSpacing="0.2"/>
+                    <Label
+                        CharacterSpacing="0.8"
+                        FontAttributes="Bold"
+                        Text="Matrícula" />
+                    <Label x:Name="Matricula" CharacterSpacing="0.2" />
 
-                    <Label FontAttributes="Bold" Text="Posto" CharacterSpacing="0.8"/>
-                    <Label x:Name="Posto" CharacterSpacing="0.8"/>
+                    <Label
+                        CharacterSpacing="0.8"
+                        FontAttributes="Bold"
+                        Text="Posto" />
+                    <Label x:Name="Posto" CharacterSpacing="0.8" />
 
-                    <Label FontAttributes="Bold" Text="Admissão" CharacterSpacing="0.8"/>
-                    <Label x:Name="Admissao" CharacterSpacing="0.8"/>
+                    <Label
+                        CharacterSpacing="0.8"
+                        FontAttributes="Bold"
+                        Text="Admissão" />
+                    <Label x:Name="Admissao" CharacterSpacing="0.8" />
 
-                    <Label FontAttributes="Bold" Text="Empresa" CharacterSpacing="0.8"/>
-                    <Label x:Name="Empresa" CharacterSpacing="0.5"/>
+                    <Label
+                        CharacterSpacing="0.8"
+                        FontAttributes="Bold"
+                        Text="Empresa" />
+                    <Label x:Name="Empresa" CharacterSpacing="0.5" />
 
-                    <Label FontAttributes="Bold" Text="CNPJ" CharacterSpacing="0.8"/>
-                    <Label x:Name="Cnpj" CharacterSpacing="0.5"/>
+                    <Label
+                        CharacterSpacing="0.8"
+                        FontAttributes="Bold"
+                        Text="CNPJ" />
+                    <Label x:Name="Cnpj" CharacterSpacing="0.5" />
 
                 </VerticalStackLayout>
             </Frame>
@@ -194,11 +279,11 @@
             <!--  Permissões  -->
             <Label
                 Margin="0,10,0,0"
+                CharacterSpacing="0.8"
                 FontAttributes="Bold"
                 FontSize="16"
                 Text="Permissões"
-                TextColor="#8B008B" 
-                CharacterSpacing="0.8" />
+                TextColor="#8B008B" />
 
             <Frame
                 Padding="10"
@@ -206,11 +291,14 @@
                 CornerRadius="6">
                 <VerticalStackLayout>
                     <Label
+                        CharacterSpacing="0.8"
                         FontAttributes="Bold"
                         Text="Câmera"
-                        TextColor="Gray" 
-                        CharacterSpacing="0.8"/>
-                    <Label Text="Ativado" TextColor="Black" CharacterSpacing="0.8"/>
+                        TextColor="Gray" />
+                    <Label
+                        CharacterSpacing="0.8"
+                        Text="Ativado"
+                        TextColor="Black" />
                 </VerticalStackLayout>
             </Frame>
 
@@ -220,11 +308,14 @@
                 CornerRadius="6">
                 <VerticalStackLayout>
                     <Label
+                        CharacterSpacing="0.8"
                         FontAttributes="Bold"
                         Text="Localização"
-                        TextColor="Gray" 
-                        CharacterSpacing="0.8"/>
-                    <Label Text="Ativado" TextColor="Black" CharacterSpacing="0.8"/>
+                        TextColor="Gray" />
+                    <Label
+                        CharacterSpacing="0.8"
+                        Text="Ativado"
+                        TextColor="Black" />
                 </VerticalStackLayout>
             </Frame>
 
@@ -234,10 +325,14 @@
                 CornerRadius="6">
                 <VerticalStackLayout>
                     <Label
+                        CharacterSpacing="0.8"
                         FontAttributes="Bold"
                         Text="Armazenamento"
-                        TextColor="Gray" CharacterSpacing="0.8"/>
-                    <Label Text="Ativado" TextColor="Black" CharacterSpacing="0.8"/>
+                        TextColor="Gray" />
+                    <Label
+                        CharacterSpacing="0.8"
+                        Text="Ativado"
+                        TextColor="Black" />
                 </VerticalStackLayout>
             </Frame>
 

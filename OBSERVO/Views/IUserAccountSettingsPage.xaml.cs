@@ -21,7 +21,7 @@ public partial class IUserAccountSettingsPage : ContentPage
                 InitialsLabel.Text = ObterIniciais(colaborador.Nome);
                 NomeColaborador.Text = colaborador.Nome;
                 Funcao.Text = colaborador.Funcao;
-                Cpf.Text = colaborador.Cpf;
+                Cpf.Text = MascaraCPF(colaborador.Cpf);
                 Telefone.Text = colaborador.Telefone;
                 Email.Text = colaborador.Email;
                 Escala.Text = colaborador.Escala;
@@ -43,6 +43,19 @@ public partial class IUserAccountSettingsPage : ContentPage
         }
     }
 
+    public static string MascaraCPF(string cpf)
+    {
+        if (string.IsNullOrWhiteSpace(cpf))
+            return string.Empty;
+
+        cpf = cpf.Trim().Replace(".", "").Replace("-", "");
+
+        if (cpf.Length != 11)
+            return cpf; // ou lançar uma exceção, se preferir
+
+        return $"{cpf.Substring(0, 3)}.{cpf.Substring(3, 3)}.{cpf.Substring(6, 3)}-{cpf.Substring(9, 2)}";
+    }
+
     public static string ObterIniciais(string nomeCompleto)
     {
         if (string.IsNullOrWhiteSpace(nomeCompleto))
@@ -60,6 +73,21 @@ public partial class IUserAccountSettingsPage : ContentPage
     }
 
     private void OnChangePhotoClicked(object sender, EventArgs e)
+    {
+
+    }
+
+    private void OnSenhaTapped(object sender, TappedEventArgs e)
+    {
+
+    }
+
+    private void OnEmailTapped(object sender, TappedEventArgs e)
+    {
+
+    }
+
+    private void OnTelefoneTapped(object sender, TappedEventArgs e)
     {
 
     }
