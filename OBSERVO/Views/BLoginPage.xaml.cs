@@ -1,5 +1,5 @@
 ﻿using OBSERVO.Models;
-
+using System.Net.Http;
 namespace OBSERVO.Views;
 
 public partial class LoginPage : ContentPage
@@ -17,9 +17,33 @@ public partial class LoginPage : ContentPage
         InitializeComponent();
         _httpClient = new HttpClient();
 
-        LogoEmpresa.Source = ImageSource.FromUri(new Uri(logoAndName[0]));
-		nomeDaEmpresa = logoAndName[1];
-		//DisplayAlert("> ", logoAndName[1], "OK");
+        nomeDaEmpresa = logoAndName[1];
+
+        ShowLogo(logoAndName);
+        //DisplayAlert("> ", logoAndName[1], "OK");
+    }
+
+    public async void ShowLogo(string[] logoAndName)
+    {
+        try
+        {
+            var httpClient = new HttpClient();
+            var response = await httpClient.GetAsync(logoAndName[0]);
+
+            // Garante que deu sucesso, se o programa passar dessa linha deu bom.
+            response.EnsureSuccessStatusCode();
+
+            if (response.IsSuccessStatusCode)
+            {
+                var stream = await response.Content.ReadAsStreamAsync();
+                LogoEmpresa.Source = ImageSource.FromStream(() => stream);
+            }
+        }
+        catch (Exception)
+        {
+            LogoEmpresa.Source = "socialentrepreneurship.png";
+        }
+
     }
 
     public async Task<string> BuscarFuncionarioAsync(string nomeEmpresa, string usuario, string senha)
