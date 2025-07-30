@@ -23,7 +23,7 @@ public partial class Menu : ContentPage
             }
             else
             {
-                //deleta tabela e volta pro início
+                //deleta tabela e volta pro início...
                 //Futuramente trate caso não consiga deletar a tabela.
                 if (await App.SQLiteDB.DeletarTabelaColaboradoresAsync())
                 {
