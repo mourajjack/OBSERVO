@@ -34,6 +34,7 @@ public partial class IUserAccountSettingsPage : ContentPage
             }
             else
             {
+                //Futuramente trate caso não consiga deletar a tabela.
                 if (await App.SQLiteDB.DeletarTabelaColaboradoresAsync())
                 {
                     //Volta pro inicio
@@ -46,6 +47,7 @@ public partial class IUserAccountSettingsPage : ContentPage
 
                     App.Current.MainPage = pagina;
                 }
+                //else
             }
         }
         catch (Exception ex)

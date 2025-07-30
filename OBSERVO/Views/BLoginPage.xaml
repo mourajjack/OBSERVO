@@ -22,37 +22,41 @@
             <!--  Campo Usuário  -->
             <VerticalStackLayout Spacing="5">
                 <Label
+                    FontFamily="sfuitext"
                     FontSize="16"
                     Text="Usuário"
-                    TextColor="Black" FontFamily="sfuitext"/>
+                    TextColor="Black" />
                 <Entry
                     x:Name="UsuarioEmpty"
                     BackgroundColor="Transparent"
                     FontAttributes="Bold"
+                    FontFamily="sfuitext"
                     FontSize="16"
                     HeightRequest="50"
                     Placeholder="CPF, e-mail ou telefone"
                     PlaceholderColor="Gray"
-                    TextColor="Black" FontFamily="sfuitext"/>
+                    TextColor="Black" />
             </VerticalStackLayout>
 
             <!--  Campo Senha  -->
             <VerticalStackLayout Spacing="5">
                 <Label
+                    FontFamily="sfuitext"
                     FontSize="16"
                     Text="Senha"
-                    TextColor="Black" FontFamily="sfuitext"/>
+                    TextColor="Black" />
                 <Grid>
                     <Entry
                         x:Name="SenhaEntry"
                         BackgroundColor="Transparent"
                         FontAttributes="Bold"
+                        FontFamily="sfuitext"
                         FontSize="16"
                         HeightRequest="50"
                         IsPassword="True"
                         Placeholder="Mínimo de 8 dígitos"
                         PlaceholderColor="Gray"
-                        TextColor="Black" FontFamily="sfuitext"/>
+                        TextColor="Black" />
                     <!--  Ícone de exibir senha, falta a lógica  -->
                     <Image
                         Margin="0,0,10,0"
@@ -66,10 +70,11 @@
 
             <!--  Esqueci minha senha  -->
             <Label
+                FontFamily="sfuitext"
                 FontSize="14"
                 HorizontalOptions="End"
                 Text="Esqueci minha senha"
-                TextColor="#740862" FontFamily="sfuitext"/>
+                TextColor="#740862" />
 
             <!--  Botão Entrar  -->
             <Button
@@ -79,11 +84,12 @@
                 Clicked="onENTRARClicked"
                 CornerRadius="8"
                 FontAttributes="Bold"
+                FontFamily="sfuitext"
                 FontSize="15"
                 HeightRequest="50"
                 ImageSource="signin.png"
                 Text="ENTRAR"
-                TextColor="White" FontFamily="sfuitext"/>
+                TextColor="White" />
 
             <ActivityIndicator
                 x:Name="LoadingIndicator"

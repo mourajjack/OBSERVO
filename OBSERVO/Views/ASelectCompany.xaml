@@ -14,45 +14,49 @@
 
                 <Label
                     FontAttributes="Bold"
+                    FontFamily="sfuitext"
                     FontSize="17"
                     HorizontalTextAlignment="Start"
                     Text="A facilidade Gest-Seg, agora ao alcance das suas mãos."
-                    TextColor="#2f2f2f" FontFamily="sfuitext"/>
+                    TextColor="#2f2f2f" />
             </VerticalStackLayout>
 
             <!--  Pergunta  -->
             <Label
                 Margin="0,17,0,-5"
                 FontAttributes="Bold"
+                FontFamily="sfuitext"
                 FontSize="19"
                 HorizontalOptions="Center"
                 Text="Qual é a sua empresa?"
-                TextColor="#740862" FontFamily="sfuitext"/>
+                TextColor="#740862" />
 
             <!--  Campo de entrada  -->
             <Entry
                 x:Name="CompanyName"
                 BackgroundColor="Transparent"
                 FontAttributes="Bold"
+                FontFamily="sfuitext"
                 FontSize="15"
                 Placeholder="Digite o nome sem utilizar traços ou hífens"
                 PlaceholderColor="Gray"
-                TextColor="Black" FontFamily="sfuitext"/>
+                TextColor="Black" />
             <!--  Botão  -->
             <Button
-                Margin="0,-10,0,0"
                 x:Name="OnPROSSEGUIR"
+                Margin="0,-10,0,0"
                 BackgroundColor="#740862"
                 CharacterSpacing="0.5"
                 Clicked="OnPROSSEGUIR_Clicked"
                 CornerRadius="10"
                 FontAttributes="Bold"
+                FontFamily="sfuitext"
                 FontSize="15"
                 HeightRequest="50"
                 HorizontalOptions="Fill"
                 ImageSource="signin.png"
                 Text="PROSSEGUIR"
-                TextColor="White" FontFamily="sfuitext"/>
+                TextColor="White" />
 
             <!--  Loading  -->
             <ActivityIndicator

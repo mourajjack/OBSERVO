@@ -263,8 +263,8 @@
                         FontFamily="sfuitext"
                         Text="Matrícula" />
                     <Label
-                        Margin="0,-5,0,0"
                         x:Name="Matricula"
+                        Margin="0,-5,0,0"
                         CharacterSpacing="0.2"
                         FontFamily="sfuitext" />
 
@@ -274,8 +274,8 @@
                         FontFamily="sfuitext"
                         Text="Posto" />
                     <Label
-                        Margin="0,-5,0,0"
                         x:Name="Posto"
+                        Margin="0,-5,0,0"
                         CharacterSpacing="0.5"
                         FontFamily="sfuitext" />
 
@@ -285,8 +285,8 @@
                         FontFamily="sfuitext"
                         Text="Admissão" />
                     <Label
-                        Margin="0,-5,0,0"
                         x:Name="Admissao"
+                        Margin="0,-5,0,0"
                         CharacterSpacing="0.5"
                         FontFamily="sfuitext" />
 
@@ -296,8 +296,8 @@
                         FontFamily="sfuitext"
                         Text="Empresa" />
                     <Label
-                        Margin="0,-5,0,0"
                         x:Name="Empresa"
+                        Margin="0,-5,0,0"
                         CharacterSpacing="0.5"
                         FontFamily="sfuitext" />
 
@@ -307,8 +307,8 @@
                         FontFamily="sfuitext"
                         Text="CNPJ" />
                     <Label
-                        Margin="0,-5,0,0"
                         x:Name="Cnpj"
+                        Margin="0,-5,0,0"
                         CharacterSpacing="0.5"
                         FontFamily="sfuitext" />
 
