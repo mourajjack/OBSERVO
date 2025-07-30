@@ -40,7 +40,7 @@
                     WidthRequest="120">
                     <Label
                         x:Name="InitialsLabel"
-                        CharacterSpacing="0.8"
+                        CharacterSpacing="0.5"
                         FontFamily="sfuitext"
                         FontSize="55"
                         HorizontalOptions="Center"
@@ -66,7 +66,7 @@
             <!--  Nome  -->
             <Label
                 x:Name="NomeColaborador"
-                CharacterSpacing="0.8"
+                CharacterSpacing="0.5"
                 FontAttributes="Bold"
                 FontFamily="sfuitext"
                 FontSize="16"
@@ -75,17 +75,17 @@
             <!--  Função  -->
             <Label
                 x:Name="Funcao"
-                Margin="0,-15,0,0"
-                CharacterSpacing="0.8"
+                Margin="0,-17,0,0"
+                CharacterSpacing="0.5"
                 FontFamily="sfuitext"
-                FontSize="15"
+                FontSize="14"
                 HorizontalOptions="Center"
                 TextColor="Gray" />
 
             <!--  Login  -->
             <Label
                 Margin="0,10,0,0"
-                CharacterSpacing="0.8"
+                CharacterSpacing="0.5"
                 FontAttributes="Bold"
                 FontFamily="sfuitext"
                 FontSize="16"
@@ -224,7 +224,7 @@
             <!--  Escala  -->
             <Label
                 Margin="0,10,0,0"
-                CharacterSpacing="0.8"
+                CharacterSpacing="0.5"
                 FontAttributes="Bold"
                 FontFamily="sfuitext"
                 FontSize="16"
@@ -245,7 +245,7 @@
             <!--  Empresa  -->
             <Label
                 Margin="0,10,0,0"
-                CharacterSpacing="0.8"
+                CharacterSpacing="0.5"
                 FontAttributes="Bold"
                 FontFamily="sfuitext"
                 FontSize="16"
@@ -258,51 +258,56 @@
                 <VerticalStackLayout Spacing="8">
 
                     <Label
-                        CharacterSpacing="0.8"
+                        CharacterSpacing="0.5"
                         FontAttributes="Bold"
                         FontFamily="sfuitext"
                         Text="Matrícula" />
                     <Label
+                        Margin="0,-5,0,0"
                         x:Name="Matricula"
                         CharacterSpacing="0.2"
                         FontFamily="sfuitext" />
 
                     <Label
-                        CharacterSpacing="0.8"
+                        CharacterSpacing="0.5"
                         FontAttributes="Bold"
                         FontFamily="sfuitext"
                         Text="Posto" />
                     <Label
+                        Margin="0,-5,0,0"
                         x:Name="Posto"
-                        CharacterSpacing="0.8"
+                        CharacterSpacing="0.5"
                         FontFamily="sfuitext" />
 
                     <Label
-                        CharacterSpacing="0.8"
+                        CharacterSpacing="0.5"
                         FontAttributes="Bold"
                         FontFamily="sfuitext"
                         Text="Admissão" />
                     <Label
+                        Margin="0,-5,0,0"
                         x:Name="Admissao"
-                        CharacterSpacing="0.8"
+                        CharacterSpacing="0.5"
                         FontFamily="sfuitext" />
 
                     <Label
-                        CharacterSpacing="0.8"
+                        CharacterSpacing="0.5"
                         FontAttributes="Bold"
                         FontFamily="sfuitext"
                         Text="Empresa" />
                     <Label
+                        Margin="0,-5,0,0"
                         x:Name="Empresa"
                         CharacterSpacing="0.5"
                         FontFamily="sfuitext" />
 
                     <Label
-                        CharacterSpacing="0.8"
+                        CharacterSpacing="0.5"
                         FontAttributes="Bold"
                         FontFamily="sfuitext"
                         Text="CNPJ" />
                     <Label
+                        Margin="0,-5,0,0"
                         x:Name="Cnpj"
                         CharacterSpacing="0.5"
                         FontFamily="sfuitext" />
@@ -314,7 +319,7 @@
             <!--  Permissões  -->
             <Label
                 Margin="0,10,0,0"
-                CharacterSpacing="0.8"
+                CharacterSpacing="0.5"
                 FontAttributes="Bold"
                 FontFamily="sfuitext"
                 FontSize="16"
@@ -327,13 +332,13 @@
                 CornerRadius="6">
                 <VerticalStackLayout>
                     <Label
-                        CharacterSpacing="0.8"
+                        CharacterSpacing="0.5"
                         FontAttributes="Bold"
                         FontFamily="sfuitext"
                         Text="Câmera"
                         TextColor="Gray" />
                     <Label
-                        CharacterSpacing="0.8"
+                        CharacterSpacing="0.5"
                         FontFamily="sfuitext"
                         Text="Ativado"
                         TextColor="Black" />
@@ -346,13 +351,13 @@
                 CornerRadius="6">
                 <VerticalStackLayout>
                     <Label
-                        CharacterSpacing="0.8"
+                        CharacterSpacing="0.5"
                         FontAttributes="Bold"
                         FontFamily="sfuitext"
                         Text="Localização"
                         TextColor="Gray" />
                     <Label
-                        CharacterSpacing="0.8"
+                        CharacterSpacing="0.5"
                         FontFamily="sfuitext"
                         Text="Ativado"
                         TextColor="Black" />
@@ -365,13 +370,13 @@
                 CornerRadius="6">
                 <VerticalStackLayout>
                     <Label
-                        CharacterSpacing="0.8"
+                        CharacterSpacing="0.5"
                         FontAttributes="Bold"
                         FontFamily="sfuitext"
                         Text="Armazenamento"
                         TextColor="Gray" />
                     <Label
-                        CharacterSpacing="0.8"
+                        CharacterSpacing="0.5"
                         FontFamily="sfuitext"
                         Text="Ativado"
                         TextColor="Black" />

@@ -16,7 +16,7 @@
                FontSize="14"
                TextColor="Gray"
                HorizontalOptions="Start"
-               Margin="0,10,0,20">
+               Margin="0,10,0,20" FontFamily="sfuitext">
             <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnFecharMenuTapped" />
               </Label.GestureRecognizers>
@@ -34,22 +34,23 @@
                        HasShadow="False"
                        Padding="0">
                     <Label Text="MC"
-                           FontSize="20"
+                           TextColor="White"
+                           FontSize="30"
                            FontAttributes="Bold"
                            HorizontalOptions="Center"
                            VerticalOptions="Center"
                            VerticalTextAlignment="Center"
-                           HorizontalTextAlignment="Center" />
+                           HorizontalTextAlignment="Center" FontFamily="sfuitext"/>
                 </Frame>
 
                 <StackLayout VerticalOptions="Center">
-                    <Label Text="MARIA CLEONICE DE MO..."
+                    <Label Text="MARIA CLEONICE DE MOURA..."
                            FontSize="14"
                            FontAttributes="Bold"
-                           LineBreakMode="TailTruncation" />
+                           LineBreakMode="TailTruncation" FontFamily="sfuitext"/>
                     <Label Text="013.133.853-60"
                            FontSize="12"
-                           TextColor="Gray" />
+                           TextColor="Gray" FontFamily="sfuitext"/>
                 </StackLayout>
             </StackLayout>
 
@@ -57,11 +58,11 @@
 
             <!-- Opções do menu -->
             <StackLayout Spacing="20">
-                <Label Text="Módulos" FontSize="14" />
-                <Label Text="Configurações" FontSize="14" />
+                <Label Text="Módulos" FontSize="14" FontFamily="sfuitext"/>
+                <Label Text="Configurações" FontSize="14" FontFamily="sfuitext"/>
                 <Label Text="Configurar perfil"
                        FontSize="14"
-                       FontAttributes="Bold" />
+                       FontAttributes="Bold" FontFamily="sfuitext"/>
             </StackLayout>
         </StackLayout>
 
@@ -89,14 +90,14 @@
                FontAttributes="Bold"
                VerticalOptions="Center" 
                Margin="-10,0,0,0"
-               CharacterSpacing="0.8"/>
+               CharacterSpacing="0.8" FontFamily="sfuitext"/>
 
             <StackLayout Grid.Column="1" Orientation="Horizontal" Spacing="0">
                 <Image Source="logout.png"
                    HeightRequest="14"
                    WidthRequest="14"
                    VerticalOptions="Center" 
-                       Margin="0,0,-4,0"/>
+                       Margin="0,0,-1,0"/>
                 <Button Text="Sair da conta"
                     FontSize="14"
                     TextColor="Black"
@@ -104,7 +105,7 @@
                     VerticalOptions="Center"
                     Clicked="Sair_Button_Clicked" 
                     Margin="0,0,-25,0" 
-                    CharacterSpacing="0.8" />
+                    CharacterSpacing="0.8" FontFamily="sfuitext"/>
             </StackLayout>
         </Grid>
     </Grid>

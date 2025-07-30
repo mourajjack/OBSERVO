@@ -75,7 +75,7 @@
             <Button
                 x:Name="BtnENTRAR"
                 BackgroundColor="#740862"
-                CharacterSpacing="0.8"
+                CharacterSpacing="0.5"
                 Clicked="onENTRARClicked"
                 CornerRadius="8"
                 FontAttributes="Bold"

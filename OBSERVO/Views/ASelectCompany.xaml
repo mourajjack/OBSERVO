@@ -14,17 +14,17 @@
 
                 <Label
                     FontAttributes="Bold"
-                    FontSize="16"
+                    FontSize="17"
                     HorizontalTextAlignment="Start"
-                    Text="A facilidade Gest-Seg, agora ao alcance das suas mãos"
-                    TextColor="Gray" FontFamily="sfuitext"/>
+                    Text="A facilidade Gest-Seg, agora ao alcance das suas mãos."
+                    TextColor="#2f2f2f" FontFamily="sfuitext"/>
             </VerticalStackLayout>
 
             <!--  Pergunta  -->
             <Label
-                Margin="0,5,0,-10"
+                Margin="0,17,0,-5"
                 FontAttributes="Bold"
-                FontSize="18"
+                FontSize="19"
                 HorizontalOptions="Center"
                 Text="Qual é a sua empresa?"
                 TextColor="#740862" FontFamily="sfuitext"/>
@@ -35,14 +35,15 @@
                 BackgroundColor="Transparent"
                 FontAttributes="Bold"
                 FontSize="15"
-                Placeholder="Informe o nome"
+                Placeholder="Digite o nome sem utilizar traços ou hífens"
                 PlaceholderColor="Gray"
                 TextColor="Black" FontFamily="sfuitext"/>
             <!--  Botão  -->
             <Button
+                Margin="0,-10,0,0"
                 x:Name="OnPROSSEGUIR"
                 BackgroundColor="#740862"
-                CharacterSpacing="0.8"
+                CharacterSpacing="0.5"
                 Clicked="OnPROSSEGUIR_Clicked"
                 CornerRadius="10"
                 FontAttributes="Bold"
