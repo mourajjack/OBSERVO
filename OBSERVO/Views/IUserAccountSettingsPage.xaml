@@ -30,7 +30,7 @@
                 <!--  Frame com as iniciais  -->
                 <Frame
                     x:Name="InitialsFrame"
-                    Padding="30"
+                    Padding="0"
                     BackgroundColor="#ccc"
                     CornerRadius="80"
                     HasShadow="False"
@@ -41,7 +41,8 @@
                     <Label
                         x:Name="InitialsLabel"
                         CharacterSpacing="0.8"
-                        FontSize="36"
+                        FontFamily="sfuitext"
+                        FontSize="55"
                         HorizontalOptions="Center"
                         Text="MS"
                         TextColor="White"
@@ -67,6 +68,7 @@
                 x:Name="NomeColaborador"
                 CharacterSpacing="0.8"
                 FontAttributes="Bold"
+                FontFamily="sfuitext"
                 FontSize="16"
                 HorizontalOptions="Center" />
 
@@ -75,6 +77,7 @@
                 x:Name="Funcao"
                 Margin="0,-15,0,0"
                 CharacterSpacing="0.8"
+                FontFamily="sfuitext"
                 FontSize="15"
                 HorizontalOptions="Center"
                 TextColor="Gray" />
@@ -84,6 +87,7 @@
                 Margin="0,10,0,0"
                 CharacterSpacing="0.8"
                 FontAttributes="Bold"
+                FontFamily="sfuitext"
                 FontSize="16"
                 Text="Login"
                 TextColor="#8B008B" />
@@ -95,11 +99,13 @@
                 <VerticalStackLayout>
                     <Label
                         FontAttributes="Bold"
+                        FontFamily="sfuitext"
                         Text="CPF"
                         TextColor="Gray" />
                     <Label
                         x:Name="Cpf"
                         CharacterSpacing="0.1"
+                        FontFamily="sfuitext"
                         TextColor="Black" />
                 </VerticalStackLayout>
             </Frame>
@@ -115,11 +121,13 @@
                     <VerticalStackLayout Grid.Column="0">
                         <Label
                             FontAttributes="Bold"
+                            FontFamily="sfuitext"
                             Text="Telefone"
                             TextColor="Gray" />
                         <Label
                             x:Name="Telefone"
                             CharacterSpacing="0.1"
+                            FontFamily="sfuitext"
                             TextColor="Black" />
                     </VerticalStackLayout>
 
@@ -150,11 +158,13 @@
                     <VerticalStackLayout Grid.Column="0">
                         <Label
                             FontAttributes="Bold"
+                            FontFamily="sfuitext"
                             Text="E-mail"
                             TextColor="Gray" />
                         <Label
                             x:Name="Email"
                             CharacterSpacing="0.2"
+                            FontFamily="sfuitext"
                             TextColor="Black" />
                     </VerticalStackLayout>
 
@@ -185,10 +195,12 @@
                     <VerticalStackLayout Grid.Column="0">
                         <Label
                             FontAttributes="Bold"
+                            FontFamily="sfuitext"
                             Text="Senha"
                             TextColor="Gray" />
                         <Label
                             CharacterSpacing="0.2"
+                            FontFamily="sfuitext"
                             Text="******"
                             TextColor="Black" />
                     </VerticalStackLayout>
@@ -214,6 +226,7 @@
                 Margin="0,10,0,0"
                 CharacterSpacing="0.8"
                 FontAttributes="Bold"
+                FontFamily="sfuitext"
                 FontSize="16"
                 Text="Escala"
                 TextColor="#8B008B" />
@@ -224,6 +237,7 @@
                 <Label
                     x:Name="Escala"
                     CharacterSpacing="0.2"
+                    FontFamily="sfuitext"
                     FontSize="14"
                     TextColor="Black" />
             </Frame>
@@ -233,6 +247,7 @@
                 Margin="0,10,0,0"
                 CharacterSpacing="0.8"
                 FontAttributes="Bold"
+                FontFamily="sfuitext"
                 FontSize="16"
                 Text="Empresa"
                 TextColor="#8B008B" />
@@ -245,32 +260,52 @@
                     <Label
                         CharacterSpacing="0.8"
                         FontAttributes="Bold"
+                        FontFamily="sfuitext"
                         Text="Matrícula" />
-                    <Label x:Name="Matricula" CharacterSpacing="0.2" />
+                    <Label
+                        x:Name="Matricula"
+                        CharacterSpacing="0.2"
+                        FontFamily="sfuitext" />
 
                     <Label
                         CharacterSpacing="0.8"
                         FontAttributes="Bold"
+                        FontFamily="sfuitext"
                         Text="Posto" />
-                    <Label x:Name="Posto" CharacterSpacing="0.8" />
+                    <Label
+                        x:Name="Posto"
+                        CharacterSpacing="0.8"
+                        FontFamily="sfuitext" />
 
                     <Label
                         CharacterSpacing="0.8"
                         FontAttributes="Bold"
+                        FontFamily="sfuitext"
                         Text="Admissão" />
-                    <Label x:Name="Admissao" CharacterSpacing="0.8" />
+                    <Label
+                        x:Name="Admissao"
+                        CharacterSpacing="0.8"
+                        FontFamily="sfuitext" />
 
                     <Label
                         CharacterSpacing="0.8"
                         FontAttributes="Bold"
+                        FontFamily="sfuitext"
                         Text="Empresa" />
-                    <Label x:Name="Empresa" CharacterSpacing="0.5" />
+                    <Label
+                        x:Name="Empresa"
+                        CharacterSpacing="0.5"
+                        FontFamily="sfuitext" />
 
                     <Label
                         CharacterSpacing="0.8"
                         FontAttributes="Bold"
+                        FontFamily="sfuitext"
                         Text="CNPJ" />
-                    <Label x:Name="Cnpj" CharacterSpacing="0.5" />
+                    <Label
+                        x:Name="Cnpj"
+                        CharacterSpacing="0.5"
+                        FontFamily="sfuitext" />
 
                 </VerticalStackLayout>
             </Frame>
@@ -281,6 +316,7 @@
                 Margin="0,10,0,0"
                 CharacterSpacing="0.8"
                 FontAttributes="Bold"
+                FontFamily="sfuitext"
                 FontSize="16"
                 Text="Permissões"
                 TextColor="#8B008B" />
@@ -293,10 +329,12 @@
                     <Label
                         CharacterSpacing="0.8"
                         FontAttributes="Bold"
+                        FontFamily="sfuitext"
                         Text="Câmera"
                         TextColor="Gray" />
                     <Label
                         CharacterSpacing="0.8"
+                        FontFamily="sfuitext"
                         Text="Ativado"
                         TextColor="Black" />
                 </VerticalStackLayout>
@@ -310,10 +348,12 @@
                     <Label
                         CharacterSpacing="0.8"
                         FontAttributes="Bold"
+                        FontFamily="sfuitext"
                         Text="Localização"
                         TextColor="Gray" />
                     <Label
                         CharacterSpacing="0.8"
+                        FontFamily="sfuitext"
                         Text="Ativado"
                         TextColor="Black" />
                 </VerticalStackLayout>
@@ -327,10 +367,12 @@
                     <Label
                         CharacterSpacing="0.8"
                         FontAttributes="Bold"
+                        FontFamily="sfuitext"
                         Text="Armazenamento"
                         TextColor="Gray" />
                     <Label
                         CharacterSpacing="0.8"
+                        FontFamily="sfuitext"
                         Text="Ativado"
                         TextColor="Black" />
                 </VerticalStackLayout>

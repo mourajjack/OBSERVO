@@ -24,7 +24,7 @@
                 <Label
                     FontSize="16"
                     Text="Usuário"
-                    TextColor="Black" />
+                    TextColor="Black" FontFamily="sfuitext"/>
                 <Entry
                     x:Name="UsuarioEmpty"
                     BackgroundColor="Transparent"
@@ -33,7 +33,7 @@
                     HeightRequest="50"
                     Placeholder="CPF, e-mail ou telefone"
                     PlaceholderColor="Gray"
-                    TextColor="Black" />
+                    TextColor="Black" FontFamily="sfuitext"/>
             </VerticalStackLayout>
 
             <!--  Campo Senha  -->
@@ -41,7 +41,7 @@
                 <Label
                     FontSize="16"
                     Text="Senha"
-                    TextColor="Black" />
+                    TextColor="Black" FontFamily="sfuitext"/>
                 <Grid>
                     <Entry
                         x:Name="SenhaEntry"
@@ -52,13 +52,13 @@
                         IsPassword="True"
                         Placeholder="Mínimo de 8 dígitos"
                         PlaceholderColor="Gray"
-                        TextColor="Black" />
+                        TextColor="Black" FontFamily="sfuitext"/>
                     <!--  Ícone de exibir senha  -->
                     <Image
                         Margin="0,0,10,0"
                         HeightRequest="24"
                         HorizontalOptions="End"
-                        Source="eye_icon.png"
+                        Source="eye.png"
                         VerticalOptions="Center"
                         WidthRequest="24" />
                 </Grid>
@@ -69,7 +69,7 @@
                 FontSize="14"
                 HorizontalOptions="End"
                 Text="Esqueci minha senha"
-                TextColor="#740862" />
+                TextColor="#740862" FontFamily="sfuitext"/>
 
             <!--  Botão Entrar  -->
             <Button
@@ -83,7 +83,7 @@
                 HeightRequest="50"
                 ImageSource="signin.png"
                 Text="ENTRAR"
-                TextColor="White" />
+                TextColor="White" FontFamily="sfuitext"/>
 
             <ActivityIndicator
                 x:Name="LoadingIndicator"

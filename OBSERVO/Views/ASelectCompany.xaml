@@ -17,16 +17,17 @@
                     FontSize="16"
                     HorizontalTextAlignment="Start"
                     Text="A facilidade Gest-Seg, agora ao alcance das suas mãos"
-                    TextColor="Gray" />
+                    TextColor="Gray" FontFamily="sfuitext"/>
             </VerticalStackLayout>
 
             <!--  Pergunta  -->
             <Label
+                Margin="0,5,0,-10"
                 FontAttributes="Bold"
                 FontSize="18"
                 HorizontalOptions="Center"
                 Text="Qual é a sua empresa?"
-                TextColor="#740862" />
+                TextColor="#740862" FontFamily="sfuitext"/>
 
             <!--  Campo de entrada  -->
             <Entry
@@ -36,7 +37,7 @@
                 FontSize="15"
                 Placeholder="Informe o nome"
                 PlaceholderColor="Gray"
-                TextColor="Black" />
+                TextColor="Black" FontFamily="sfuitext"/>
             <!--  Botão  -->
             <Button
                 x:Name="OnPROSSEGUIR"
@@ -50,7 +51,7 @@
                 HorizontalOptions="Fill"
                 ImageSource="signin.png"
                 Text="PROSSEGUIR"
-                TextColor="White" />
+                TextColor="White" FontFamily="sfuitext"/>
 
             <!--  Loading  -->
             <ActivityIndicator
