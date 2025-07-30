@@ -111,8 +111,15 @@ public partial class IUserAccountSettingsPage : ContentPage
 
     }
 
-    private void OnTelefoneTapped(object sender, TappedEventArgs e)
+    private async void OnTelefoneTapped(object sender, TappedEventArgs e)
     {
+        var pagina = new NavigationPage(
+                new Telefone()
+                    );
 
+        pagina.BarBackgroundColor = Color.FromRgb(116, 8, 98);
+        pagina.BarTextColor = Color.FromRgb(219, 219, 219);
+
+        await Navigation.PushAsync(pagina);
     }
 }

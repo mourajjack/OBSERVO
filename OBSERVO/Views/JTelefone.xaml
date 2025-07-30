@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="OBSERVO.Views.Telefone"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Editar telefone">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <!--  Texto informativo  -->
+            <Label
+                Margin="0,20,0,0"
+                FontFamily="sfuitext"
+                FontSize="15"
+                HorizontalTextAlignment="Center"
+                Text="Atualmente, o seu número de telefone vinculado à sua conta Gest-Seg é "
+                TextColor="#2f2f2f" />
+
+            <Label
+                FontFamily="sfuitext"
+                FontSize="15"
+                HorizontalTextAlignment="Center"
+                Text="Caso queira alterar, informe o novo número abaixo:"
+                TextColor="#2f2f2f" />
+
+            <!--  Campo Telefone  -->
+            <Label
+                Margin="0,10,0,-10"
+                FontFamily="sfuitext"
+                FontSize="16"
+                Text="Telefone"
+                TextColor="Black" />
+
+            <Frame
+                Padding="5"
+                BorderColor="#e0e0e0"
+                CornerRadius="6">
+                <Entry
+                    FontFamily="sfuitext"
+                    FontSize="16"
+                    Keyboard="Telephone"
+                    Placeholder="(00) 00000-0000"
+                    PlaceholderColor="Gray"
+                    TextColor="Black" />
+            </Frame>
+
+            <!--  Botão SALVAR  -->
+            <Button
+                BackgroundColor="#740862"
+                CharacterSpacing="0.5"
+                CornerRadius="8"
+                FontAttributes="Bold"
+                HeightRequest="50"
+                ImageSource="save.png"
+                IsEnabled="False"
+                Text="SALVAR"
+                TextColor="White" />
+            <!--  ajuste conforme validação  -->
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -95,6 +95,9 @@
 	  <Compile Update="Views\DMenu.xaml.cs">
 	    <DependentUpon>DMenu.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Views\JTelefone.xaml.cs">
+	    <DependentUpon>JTelefone.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -123,6 +126,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\IUserAccountSettingsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\JTelefone.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
