@@ -30,7 +30,7 @@ public partial class LoginPage : ContentPage
             var httpClient = new HttpClient();
             var response = await httpClient.GetAsync(logoAndName[0]);
 
-            // Garante que deu sucesso, se o programa passar dessa linha deu bom.
+            // Garante que deu sucesso, se o programa passar dessa linha deu bom. :)
             response.EnsureSuccessStatusCode();
 
             if (response.IsSuccessStatusCode)
