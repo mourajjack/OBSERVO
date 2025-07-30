@@ -72,7 +72,7 @@ public partial class SelectCompany : ContentPage
                 }
                 else
                 {
-                    await DisplayAlert(CompanyName.Text + "❓", "Empresa não encontrada. Verifique se o nome está correto.", "OK");
+                    await DisplayAlert(CompanyName.Text + "❓", "Empresa não encontrada. Verifique se o nome fantasia informado está correto.", "OK");
                     string[] logo = new string[2];
                     return logo;
                 }
@@ -112,7 +112,7 @@ public partial class SelectCompany : ContentPage
             logoAndName = await GetCompanyByName(companyName);
         }
 
-        if (!string.IsNullOrEmpty(logoAndName[0]))
+        if (!string.IsNullOrEmpty(logoAndName[0]) && !string.IsNullOrEmpty(logoAndName[1]))
         {
             //MinhaImagem.Source = ImageSource.FromUri(new Uri(logo));
             //App.Current.MainPage = new NavigationPage(new LoginPage(logo));

@@ -53,7 +53,7 @@
                         Placeholder="Mínimo de 8 dígitos"
                         PlaceholderColor="Gray"
                         TextColor="Black" FontFamily="sfuitext"/>
-                    <!--  Ícone de exibir senha  -->
+                    <!--  Ícone de exibir senha, falta a lógica  -->
                     <Image
                         Margin="0,0,10,0"
                         HeightRequest="24"

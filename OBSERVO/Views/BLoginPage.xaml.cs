@@ -27,17 +27,22 @@ public partial class LoginPage : ContentPage
     {
         try
         {
-            var httpClient = new HttpClient();
-            var response = await httpClient.GetAsync(logoAndName[0]);
+                //var httpClient = new HttpClient();
+                var response = await _httpClient.GetAsync(logoAndName[0]);
 
-            // Garante que deu sucesso, se o programa passar dessa linha deu bom. :)
-            response.EnsureSuccessStatusCode();
+                // Garante que deu sucesso, se o programa passar dessa linha deu bom. :)
+                response.EnsureSuccessStatusCode();
 
-            if (response.IsSuccessStatusCode)
-            {
-                var stream = await response.Content.ReadAsStreamAsync();
-                LogoEmpresa.Source = ImageSource.FromStream(() => stream);
-            }
+                if (response.IsSuccessStatusCode)
+                {
+                    var stream = await response.Content.ReadAsStreamAsync();
+                    LogoEmpresa.Source = ImageSource.FromStream(() => stream);
+                }
+                else
+                {
+                    LogoEmpresa.Source = "socialentrepreneurship.png";
+                }
+
         }
         catch (Exception)
         {
