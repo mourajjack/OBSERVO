@@ -34,12 +34,34 @@ public partial class IUserAccountSettingsPage : ContentPage
             }
             else
             {
+                if (await App.SQLiteDB.DeletarTabelaColaboradoresAsync())
+                {
+                    //Volta pro inicio
+                    var pagina = new NavigationPage(
+                    new SelectCompany()
+                    );
 
+                    pagina.BarBackgroundColor = Color.FromRgb(116, 8, 98);
+                    pagina.BarTextColor = Color.FromRgb(219, 219, 219);
+
+                    App.Current.MainPage = pagina;
+                }
             }
         }
         catch (Exception ex)
         {
+            if (await App.SQLiteDB.DeletarTabelaColaboradoresAsync())
+            {
+                //Volta pro inicio
+                var pagina = new NavigationPage(
+                new SelectCompany()
+                );
 
+                pagina.BarBackgroundColor = Color.FromRgb(116, 8, 98);
+                pagina.BarTextColor = Color.FromRgb(219, 219, 219);
+
+                App.Current.MainPage = pagina;
+            }
         }
     }
 

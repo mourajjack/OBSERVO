@@ -31,6 +31,11 @@ namespace OBSERVO.Services
             }
         }
 
+        public async Task CriaTabelaColaboradores()
+        {
+             localDB.CreateTableAsync<Colaboradores>().Wait();
+        }
+
         public Task<Colaboradores> ColaboradorGetAsync(int colaboradorId)
         {
             return localDB.Table<Colaboradores>().Where(i => i.Id == colaboradorId).FirstOrDefaultAsync();

@@ -134,6 +134,8 @@ public partial class LoginPage : ContentPage
                 //Salvar no db local:
                 try
                 {
+                    //cria a tabela caso a tabela não exista
+                    await App.SQLiteDB.CriaTabelaColaboradores();
                     int result = await App.SQLiteDB.ColaboradorSaveAndUpdateInLocalDBAsync(colaborador);
                     //int result = await App.SQLiteDB.ColaboradorDeleteItemAsync(colaborador);
 
@@ -144,11 +146,19 @@ public partial class LoginPage : ContentPage
                     }
                     else
                     {
-                        // Se der erro ao salvar ou cair em uma excepton
+                        // Se causar erro ao salvar ou cair uma exception
                         //delete a tabela;
                         if(await App.SQLiteDB.DeletarTabelaColaboradoresAsync())
                         {
-                            //await DisplayAlert("result <= 0", "result <= 0", "OK");
+                            //Volta pro inicio
+                            var pagina = new NavigationPage(
+                            new SelectCompany()
+                            );
+
+                            pagina.BarBackgroundColor = Color.FromRgb(116, 8, 98);
+                            pagina.BarTextColor = Color.FromRgb(219, 219, 219);
+
+                            App.Current.MainPage = pagina;
                         }
                     }
                 }
