@@ -113,13 +113,8 @@ public partial class IUserAccountSettingsPage : ContentPage
 
     private async void OnTelefoneTapped(object sender, TappedEventArgs e)
     {
-        var pagina = new NavigationPage(
-                new Telefone()
-                    );
+        var pagina = new Telefone();
 
-        pagina.BarBackgroundColor = Color.FromRgb(116, 8, 98);
-        pagina.BarTextColor = Color.FromRgb(219, 219, 219);
-
-        await Navigation.PushAsync(pagina);
+        await Navigation.PushModalAsync(pagina);
     }
 }
