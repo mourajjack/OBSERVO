@@ -12,7 +12,7 @@ public partial class Telefone : ContentPage
 	{
 		InitializeComponent();
 
-        // Esconde a barra de navegação apenas nesta página
+        // Esconde a barra de navegação apenas nesta página, desnecessario!
         NavigationPage.SetHasNavigationBar(this, false);
 
     }
