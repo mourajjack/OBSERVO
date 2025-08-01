@@ -128,7 +128,8 @@ public partial class LoginPage : ContentPage
                     Posto = json.RootElement.GetProperty("postoDeServico").GetString(),
                     DataAdmissao = json.RootElement.GetProperty("dataDaAdmissao").GetString(),
                     Empresa = json.RootElement.GetProperty("empresa").GetString(),
-                    Cnpj = json.RootElement.GetProperty("cnpj").GetString()
+                    Cnpj = json.RootElement.GetProperty("cnpj").GetString(),
+                    AbaSheets = nomeDaEmpresa
                 };
 
                 //Salvar no db local:

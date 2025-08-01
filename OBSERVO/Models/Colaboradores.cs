@@ -24,5 +24,6 @@ namespace OBSERVO.Models
         public string DataAdmissao { get; set; }
         public string Empresa { get; set; }
         public string Cnpj { get; set; }
+        public string AbaSheets { get; set; }
     }
 }

@@ -71,6 +71,7 @@
                     BorderColor="#e0e0e0"
                     CornerRadius="6">
                     <Entry
+                        x:Name="TelefoneEntry"
                         FontFamily="sfuitext"
                         FontSize="16"
                         Keyboard="Telephone"
