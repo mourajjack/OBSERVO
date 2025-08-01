@@ -31,6 +31,21 @@ namespace OBSERVO.Services
             }
         }
 
+        public async Task<int> AtualizarTelefoneAsync(string cpf, string novoTelefone)
+        {
+            var colaborador = await localDB.Table<Colaboradores>()
+                                           .Where(c => c.Cpf == cpf)
+                                           .FirstOrDefaultAsync();
+
+            if (colaborador != null)
+            {
+                colaborador.Telefone = novoTelefone;
+                return await localDB.UpdateAsync(colaborador);
+            }
+
+            return 0; // não encontrou
+        }
+
         public async Task CriaTabelaColaboradores()
         {
              localDB.CreateTableAsync<Colaboradores>().Wait();
