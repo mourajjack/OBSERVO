@@ -2,6 +2,7 @@
 using System;
 using System.Text;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace OBSERVO.Views;
@@ -74,7 +75,7 @@ public partial class Telefone : ContentPage
                     Opcao = 1,
                     aba = colaborador.AbaSheets,
                     CPF = colaborador.Cpf,
-                    Telefone = TelefoneEntry.Text
+                    Telefone = FormatarTelefone(TelefoneEntry.Text)
                 };
 
                 string json = JsonSerializer.Serialize(dados);
@@ -91,10 +92,10 @@ public partial class Telefone : ContentPage
                 var jsonResp = System.Text.Json.JsonDocument.Parse(respostaJson);
                 if (jsonResp.RootElement.GetProperty("success").GetBoolean())
                 {
-                    await DisplayAlert("✅ " + TelefoneEntry.Text, jsonResp.RootElement.GetProperty("message").GetString(), "OK");
+                    await DisplayAlert("✅ " + FormatarTelefone(TelefoneEntry.Text), jsonResp.RootElement.GetProperty("message").GetString(), "OK");
                     //Atualizar localDB
                     //voltar para a página anterior...
-                    int result = await App.SQLiteDB.AtualizarTelefoneAsync(colaborador.Cpf, TelefoneEntry.Text);
+                    int result = await App.SQLiteDB.AtualizarTelefoneAsync(colaborador.Cpf, FormatarTelefone(TelefoneEntry.Text));
                     if (result > 0)
                     {
                         //Update Success
@@ -129,5 +130,35 @@ public partial class Telefone : ContentPage
     private async void OnBackClicked(object sender, TappedEventArgs e)
     {
         await Navigation.PopModalAsync();
+    }
+
+    public static string FormatarTelefone(string input)
+    {
+        if (string.IsNullOrWhiteSpace(input))
+            return string.Empty;
+
+        // 1️⃣ Remove tudo que não é número
+        string apenasNumeros = Regex.Replace(input, @"\D", "");
+
+        // 2️⃣ Garante no máximo 11 dígitos
+        if (apenasNumeros.Length > 11)
+            apenasNumeros = apenasNumeros.Substring(0, 11);
+
+        // 3️⃣ Aplica a máscara
+        if (apenasNumeros.Length == 11)
+        {
+            // Celular com 9 dígitos
+            return Regex.Replace(apenasNumeros, @"(\d{2})(\d{5})(\d{4})", "($1) $2-$3");
+        }
+        else if (apenasNumeros.Length == 10)
+        {
+            // Telefone fixo
+            return Regex.Replace(apenasNumeros, @"(\d{2})(\d{4})(\d{4})", "($1) $2-$3");
+        }
+        else
+        {
+            // Se ainda não tiver todos os dígitos, retorna apenas o que tem
+            return apenasNumeros;
+        }
     }
 }
