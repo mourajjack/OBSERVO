@@ -1,5 +1,6 @@
 ﻿using OBSERVO.Models;
 using System.Net.Http;
+using System.Threading.Tasks;
 namespace OBSERVO.Views;
 
 public partial class LoginPage : ContentPage
@@ -193,7 +194,7 @@ public partial class LoginPage : ContentPage
             else
             {
                 //
-                await DisplayAlert("🚫 Acesso Negado", "Nome de usuário ou senha inválidos. Por favor, tente novamente.", "OK");
+                await DisplayAlert("🚫 Acesso Negado", "Nome de usuário ou senha inválidos. Por favor, tente novamente ou entre em contato com o RH da sua empresa.", "OK");
             }
         }
         else
@@ -218,5 +219,21 @@ public partial class LoginPage : ContentPage
 #elif IOS
     // Não recomendado! Apenas exibir uma mensagem ou retornar à tela inicial.
 #endif
+    }
+
+    private async void onEyeClicked(object sender, EventArgs e)
+    {
+        if (SenhaEntry.IsPassword)
+        {
+            SenhaEntry.IsPassword = false;
+            Eye.Source = "eyeicon.png";
+            return;
+        }
+        else if (!SenhaEntry.IsPassword)
+        {
+            SenhaEntry.IsPassword = true;
+            Eye.Source = "eye.png";
+            return;
+        }
     }
 }
