@@ -12,6 +12,7 @@
 
     <TabbedPage.ToolbarItems>
         <ToolbarItem x:Name="NameCOLABORADOR" Clicked="COLABORADORClick" />
+        <ToolbarItem IconImageSource="arrowrightt.png" />
     </TabbedPage.ToolbarItems>
 
     <pages:Ponto Title="Ponto" IconImageSource="ponto.png" />

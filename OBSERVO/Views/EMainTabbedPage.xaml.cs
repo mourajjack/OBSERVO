@@ -18,7 +18,8 @@ public partial class MainTabbedPage : TabbedPage
 
             if (colaborador != null)
             {
-                NameCOLABORADOR.Text = ObterNomeEPrimeiroSobrenome(colaborador.Nome) + "   ❯";
+                //NameCOLABORADOR.Text = "Olá, " + ObterNomeEPrimeiroSobrenome(colaborador.Nome) + "   ❯";
+                NameCOLABORADOR.Text = "Olá, " + ObterNomeEPrimeiroSobrenome(colaborador.Nome);
             }
             else
             {
