@@ -72,4 +72,16 @@ public partial class MainTabbedPage : TabbedPage
 
         await Navigation.PushAsync(pagina);
     }
+
+    private async void COLABORADORBtn2Click(object sender, EventArgs e)
+    {
+        var pagina = new NavigationPage(
+                new IUserAccountSettingsPage()
+                    );
+
+        pagina.BarBackgroundColor = Color.FromRgb(116, 8, 98);
+        pagina.BarTextColor = Color.FromRgb(219, 219, 219);
+
+        await Navigation.PushAsync(pagina);
+    }
 }
