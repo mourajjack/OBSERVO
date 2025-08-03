@@ -22,7 +22,7 @@
                             <TapGestureRecognizer Tapped="OnBackClicked" />
                         </ContentView.GestureRecognizers>
 
-                        <!--  Ícone de voltar  -->
+                        <!--  Ícone de voltar ...  -->
                         <Image
                             Margin="7,0,20,-10"
                             HeightRequest="20"
