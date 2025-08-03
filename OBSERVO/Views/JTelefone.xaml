@@ -52,7 +52,7 @@
                     Margin="0,20,0,0"
                     FontAttributes="Bold"
                     FontFamily="sfuitext"
-                    FontSize="15"
+                    FontSize="15.5"
                     HorizontalTextAlignment="Start"
                     Text="Atualmente, o seu número de telefone vinculado à sua conta Gest-Seg é "
                     TextColor="#2f2f2f" />
@@ -60,7 +60,7 @@
                 <Label
                     FontAttributes="Bold"
                     FontFamily="sfuitext"
-                    FontSize="15"
+                    FontSize="15.5"
                     HorizontalTextAlignment="Start"
                     Text="Caso queira alterar, informe o novo número abaixo:"
                     TextColor="#2f2f2f" />
@@ -96,6 +96,7 @@
                     Clicked="onSaveClicked"
                     CornerRadius="8"
                     FontAttributes="Bold"
+                    FontSize="15"
                     HeightRequest="50"
                     ImageSource="save.png"
                     Text="SALVAR"

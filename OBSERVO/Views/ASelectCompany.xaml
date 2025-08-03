@@ -23,7 +23,7 @@
 
             <!--  Pergunta  -->
             <Label
-                Margin="0,17,0,-5"
+                Margin="0,17,0,-1"
                 FontAttributes="Bold"
                 FontFamily="sfuitext"
                 FontSize="19"
