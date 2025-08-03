@@ -9,7 +9,7 @@
         <VerticalStackLayout>
 
             <Frame
-                Margin="-2,-20,0,0"
+                Margin="-2,-20,-10,0"
                 Padding="0,14,0,28"
                 BackgroundColor="#740862"
                 CornerRadius="0">
@@ -84,14 +84,15 @@
                         Keyboard="Telephone"
                         Placeholder="(00) 00000-0000"
                         PlaceholderColor="Gray"
-                        TextColor="Black" />
+                        TextColor="Black" 
+                        TextChanged="TelefoneEntry_TextChanged"/>
 
                 </Frame>
 
                 <!--  Botão SALVAR  -->
                 <Button
                     x:Name="btnOnSaveClicked"
-                    BackgroundColor="#740862"
+                    BackgroundColor="#ccc"
                     CharacterSpacing="0.5"
                     Clicked="onSaveClicked"
                     CornerRadius="8"
@@ -99,8 +100,10 @@
                     FontSize="15"
                     HeightRequest="50"
                     ImageSource="save.png"
+                    IsEnabled="False"
                     Text="SALVAR"
                     TextColor="White" />
+                <!--  começa desabilitado 740862  -->
                 <!--  ajuste conforme validação  -->
 
             </VerticalStackLayout>

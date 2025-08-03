@@ -161,4 +161,21 @@ public partial class Telefone : ContentPage
             return apenasNumeros;
         }
     }
+
+    private void TelefoneEntry_TextChanged(object sender, TextChangedEventArgs e)
+    {
+        // Remove tudo que não seja número
+        string apenasNumeros = Regex.Replace(TelefoneEntry.Text ?? "", @"\D", "");
+
+        // Valida se é telefone fixo (10) ou celular (11)
+        bool telefoneValido = apenasNumeros.Length == 10 || apenasNumeros.Length == 11;
+
+        // Habilita/desabilita o botão
+        btnOnSaveClicked.IsEnabled = telefoneValido;
+
+        // Troca a cor de fundo
+        btnOnSaveClicked.BackgroundColor = telefoneValido
+            ? Color.FromArgb("#740862")
+            : Color.FromArgb("#ccc");
+    }
 }
