@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="OBSERVO.Views.Email"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Email">
+
+    <ScrollView>
+        <VerticalStackLayout>
+
+            <Frame
+                Margin="-2,-20,-10,0"
+                Padding="0,14,0,28"
+                BackgroundColor="#740862"
+                CornerRadius="0">
+
+                <HorizontalStackLayout Margin="0,0,0,-8" VerticalOptions="Center">
+
+                    <!--  Área maior para clique  -->
+                    <ContentView Padding="15,16" BackgroundColor="Transparent">
+                        <ContentView.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnBackClicked" />
+                        </ContentView.GestureRecognizers>
+
+                        <!--  Ícone de voltar ...  -->
+                        <Image
+                            Margin="7,10,20,-10"
+                            HeightRequest="20"
+                            Source="backarrow.png"
+                            VerticalOptions="Center"
+                            WidthRequest="20" />
+                    </ContentView>
+
+                    <!--  Texto  -->
+                    <Label
+                        Margin="0,10,0,-10"
+                        FontFamily="sfuitext"
+                        FontSize="20"
+                        Text="Editar e-mail"
+                        TextColor="White"
+                        VerticalOptions="Center" />
+                </HorizontalStackLayout>
+
+
+            </Frame>
+
+            <VerticalStackLayout Padding="20" Spacing="20">
+
+                <!--  Texto informativo  -->
+                <Label
+                    x:Name="LblEmail"
+                    Margin="0,20,0,0"
+                    FontAttributes="Bold"
+                    FontFamily="sfuitext"
+                    FontSize="15.5"
+                    HorizontalTextAlignment="Start"
+                    Text="Atualmente, o e-mail vinculado à sua conta Gest-Seg é:"
+                    TextColor="#2f2f2f" />
+
+                <Label
+                    FontAttributes="Bold"
+                    FontFamily="sfuitext"
+                    FontSize="15.5"
+                    HorizontalTextAlignment="Start"
+                    Text="Caso queira cadastrar ou alterar, informe um e-mail válido abaixo:"
+                    TextColor="#2f2f2f" />
+
+                <!--  Campo Email  -->
+                <Label
+                    Margin="0,10,0,-10"
+                    FontFamily="sfuitext"
+                    FontSize="16"
+                    Text="E-mail"
+                    TextColor="Black" />
+
+                <Frame
+                    Padding="5"
+                    BorderColor="#e0e0e0"
+                    CornerRadius="6">
+                    <Entry
+                        x:Name="EmailEntry"
+                        FontFamily="sfuitext"
+                        FontSize="16"
+                        Keyboard="Email"
+                        Placeholder="Informe o seu endereço de e-mail"
+                        PlaceholderColor="Gray"
+                        TextChanged="EmailEntry_TextChanged"
+                        TextColor="Black" />
+
+                </Frame>
+
+                <!--  Botão SALVAR  -->
+                <Button
+                    x:Name="btnOnSaveClicked"
+                    BackgroundColor="#ccc"
+                    CharacterSpacing="0.5"
+                    Clicked="onSaveClicked"
+                    CornerRadius="8"
+                    FontAttributes="Bold"
+                    FontSize="15"
+                    HeightRequest="50"
+                    ImageSource="save.png"
+                    IsEnabled="False"
+                    Text="SALVAR"
+                    TextColor="White" />
+                <!--  começa desabilitado 740862  -->
+                <!--  ajuste conforme validação  -->
+
+            </VerticalStackLayout>
+            <ActivityIndicator
+                x:Name="LoadingIndicator"
+                HeightRequest="50"
+                HorizontalOptions="Center"
+                IsRunning="False"
+                IsVisible="False"
+                VerticalOptions="Center"
+                WidthRequest="50"
+                Color="#740862" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

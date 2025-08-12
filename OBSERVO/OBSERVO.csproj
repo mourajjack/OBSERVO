@@ -80,6 +80,9 @@
 	  <Compile Update="Views\CMainFlyoutPage.xaml.cs">
 	    <DependentUpon>CMainFlyoutPage.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Views\KEmail.xaml.cs">
+	    <DependentUpon>KEmail.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\EMainTabbedPage.xaml.cs">
 	    <DependentUpon>EMainTabbedPage.xaml</DependentUpon>
 	  </Compile>
@@ -101,6 +104,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Views\KEmail.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\GHolerite.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
