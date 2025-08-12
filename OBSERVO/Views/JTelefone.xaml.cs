@@ -63,6 +63,7 @@ public partial class Telefone : ContentPage
         LoadingIndicator.IsVisible = true;
         LoadingIndicator.IsRunning = true;
         btnOnSaveClicked.IsEnabled = false;
+        TelefoneEntry.IsEnabled = false;
 
         try
         {
@@ -125,6 +126,7 @@ public partial class Telefone : ContentPage
         LoadingIndicator.IsVisible = false;
         LoadingIndicator.IsRunning = false;
         btnOnSaveClicked.IsEnabled = true;
+        TelefoneEntry.IsEnabled = true;
     }
 
     private async void OnBackClicked(object sender, TappedEventArgs e)

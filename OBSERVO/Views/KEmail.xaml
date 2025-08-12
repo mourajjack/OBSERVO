@@ -54,7 +54,7 @@
                     FontFamily="sfuitext"
                     FontSize="15.5"
                     HorizontalTextAlignment="Start"
-                    Text="Atualmente, o e-mail vinculado à sua conta Gest-Seg é:"
+                    Text="Atualmente, o e-mail vinculado à sua conta Gest-Seg é: "
                     TextColor="#2f2f2f" />
 
                 <Label
@@ -62,7 +62,7 @@
                     FontFamily="sfuitext"
                     FontSize="15.5"
                     HorizontalTextAlignment="Start"
-                    Text="Caso queira cadastrar ou alterar, informe um e-mail válido abaixo:"
+                    Text="Caso queira alterar, informe um e-mail válido abaixo:"
                     TextColor="#2f2f2f" />
 
                 <!--  Campo Email  -->

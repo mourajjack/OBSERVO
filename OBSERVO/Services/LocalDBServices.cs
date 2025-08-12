@@ -46,6 +46,21 @@ namespace OBSERVO.Services
             return 0; // não encontrou
         }
 
+        public async Task<int> AtualizarEmailAsync(string cpf, string novoEmail)
+        {
+            var colaborador = await localDB.Table<Colaboradores>()
+                                           .Where(c => c.Cpf == cpf)
+                                           .FirstOrDefaultAsync();
+
+            if (colaborador != null)
+            {
+                colaborador.Email = novoEmail;
+                return await localDB.UpdateAsync(colaborador);
+            }
+
+            return 0; // não encontrou
+        }
+
         public async Task CriaTabelaColaboradores()
         {
              localDB.CreateTableAsync<Colaboradores>().Wait();

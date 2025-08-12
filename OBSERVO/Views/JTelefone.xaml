@@ -54,7 +54,7 @@
                     FontFamily="sfuitext"
                     FontSize="15.5"
                     HorizontalTextAlignment="Start"
-                    Text="Atualmente, o seu número de telefone vinculado à sua conta Gest-Seg é: "
+                    Text="Atualmente, o número de telefone vinculado à sua conta Gest-Seg é: "
                     TextColor="#2f2f2f" />
 
                 <Label
@@ -84,8 +84,8 @@
                         Keyboard="Telephone"
                         Placeholder="(00) 00000-0000"
                         PlaceholderColor="Gray"
-                        TextColor="Black" 
-                        TextChanged="TelefoneEntry_TextChanged"/>
+                        TextChanged="TelefoneEntry_TextChanged"
+                        TextColor="Black" />
 
                 </Frame>
 
