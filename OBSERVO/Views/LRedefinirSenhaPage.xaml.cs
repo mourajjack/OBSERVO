@@ -190,15 +190,21 @@ public partial class RedefinirSenhaPage : ContentPage
         }
         else
         {
-            if(SenhaNovaEntry.Text == ConfirmacaoSenhaEntry.Text) 
-            { 
+            if (SenhaNovaEntry.Text == ConfirmacaoSenhaEntry.Text) 
+            {
+                LblErroConfirmacao.IsVisible = false;
                 LblErroSenhaNova.IsVisible = false;
                 //testa para habilitar SALVAR
-                if(!(string.IsNullOrEmpty(SenhaAtualEntry.Text)) && !(string.IsNullOrEmpty(SenhaNovaEntry.Text)) && !(string.IsNullOrEmpty(ConfirmacaoSenhaEntry.Text)))
+                if (!(string.IsNullOrEmpty(SenhaAtualEntry.Text)) && !(string.IsNullOrEmpty(SenhaNovaEntry.Text)) && !(string.IsNullOrEmpty(ConfirmacaoSenhaEntry.Text)))
                 {
                     btnOnSaveClicked.IsEnabled = true;
                     btnOnSaveClicked.BackgroundColor = Color.FromArgb("#740862");
                 }
+            }
+            else
+            {
+                LblErroConfirmacao.IsVisible = true;
+                LblErroConfirmacao.Text = "As senhas devem ser iguais";
             }
         }
     }
@@ -232,12 +238,16 @@ public partial class RedefinirSenhaPage : ContentPage
         }
         else
         {
-            LblErroConfirmacao.IsVisible = false;
-            //testa para habilitar SALVAR
-            if (!(string.IsNullOrEmpty(SenhaAtualEntry.Text)) && !(string.IsNullOrEmpty(SenhaNovaEntry.Text)) && !(string.IsNullOrEmpty(ConfirmacaoSenhaEntry.Text)))
+            if (SenhaNovaEntry.Text == ConfirmacaoSenhaEntry.Text)
             {
-                btnOnSaveClicked.IsEnabled = true;
-                btnOnSaveClicked.BackgroundColor = Color.FromArgb("#740862");
+                LblErroConfirmacao.IsVisible = false;
+                LblErroSenhaNova.IsVisible = false;
+                //testa para habilitar SALVAR
+                if (!(string.IsNullOrEmpty(SenhaAtualEntry.Text)) && !(string.IsNullOrEmpty(SenhaNovaEntry.Text)) && !(string.IsNullOrEmpty(ConfirmacaoSenhaEntry.Text)))
+                {
+                    btnOnSaveClicked.IsEnabled = true;
+                    btnOnSaveClicked.BackgroundColor = Color.FromArgb("#740862");
+                }
             }
         }
 
