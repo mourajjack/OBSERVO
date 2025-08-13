@@ -158,4 +158,88 @@ public partial class RedefinirSenhaPage : ContentPage
             }
         }
     }
+
+    private void SenhaNovaTextChanged(object sender, TextChangedEventArgs e)
+    {
+
+        // Texto antes da mudança
+        string textoAnterior = e.OldTextValue;
+
+        // Texto atual (após a mudança)
+        string textoNovo = e.NewTextValue;
+
+        // Detecta se foi apagado um caractere
+        if (!string.IsNullOrEmpty(textoAnterior) &&
+            textoAnterior.Length > textoNovo.Length)
+        {
+            if (string.IsNullOrEmpty(SenhaNovaEntry.Text))
+            {
+                LblErroSenhaNova.Text = "Obrigatório";
+                btnOnSaveClicked.IsEnabled = false;
+                btnOnSaveClicked.BackgroundColor = Color.FromArgb("#ccc");
+                return;
+            }
+        }
+
+        if(SenhaNovaEntry.Text.Length < 4)
+        {
+            LblErroSenhaNova.IsVisible = true;
+            LblErroSenhaNova.Text = "Mínimo de 4 dígitos";
+            btnOnSaveClicked.IsEnabled = false;
+            btnOnSaveClicked.BackgroundColor = Color.FromArgb("#ccc");
+        }
+        else
+        {
+            if(SenhaNovaEntry.Text == ConfirmacaoSenhaEntry.Text) 
+            { 
+                LblErroSenhaNova.IsVisible = false;
+                //testa para habilitar SALVAR
+                if(!(string.IsNullOrEmpty(SenhaAtualEntry.Text)) && !(string.IsNullOrEmpty(SenhaNovaEntry.Text)) && !(string.IsNullOrEmpty(ConfirmacaoSenhaEntry.Text)))
+                {
+                    btnOnSaveClicked.IsEnabled = true;
+                    btnOnSaveClicked.BackgroundColor = Color.FromArgb("#740862");
+                }
+            }
+        }
+    }
+
+    private void ConfirmacaoSenhaTextChanged(object sender, TextChangedEventArgs e)
+    {
+        // Texto antes da mudança
+        string textoAnterior = e.OldTextValue;
+
+        // Texto atual (após a mudança)
+        string textoNovo = e.NewTextValue;
+
+        // Detecta se foi apagado um caractere
+        if (!string.IsNullOrEmpty(textoAnterior) &&
+            textoAnterior.Length > textoNovo.Length)
+        {
+            if (string.IsNullOrEmpty(ConfirmacaoSenhaEntry.Text))
+            {
+                LblErroConfirmacao.IsVisible = true;
+                LblErroConfirmacao.Text = "Obrigatório";
+                btnOnSaveClicked.IsEnabled = false;
+                btnOnSaveClicked.BackgroundColor = Color.FromArgb("#ccc");
+                return;
+            }
+        }
+
+        if (SenhaNovaEntry.Text != ConfirmacaoSenhaEntry.Text)
+        {
+            LblErroConfirmacao.IsVisible = true;
+            LblErroConfirmacao.Text = "As senhas devem ser iguais";
+        }
+        else
+        {
+            LblErroConfirmacao.IsVisible = false;
+            //testa para habilitar SALVAR
+            if (!(string.IsNullOrEmpty(SenhaAtualEntry.Text)) && !(string.IsNullOrEmpty(SenhaNovaEntry.Text)) && !(string.IsNullOrEmpty(ConfirmacaoSenhaEntry.Text)))
+            {
+                btnOnSaveClicked.IsEnabled = true;
+                btnOnSaveClicked.BackgroundColor = Color.FromArgb("#740862");
+            }
+        }
+
+    }
 }

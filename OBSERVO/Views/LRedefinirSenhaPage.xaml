@@ -118,6 +118,7 @@
                             IsPassword="True"
                             Keyboard="Default"
                             Placeholder="Digite a nova senha"
+                            TextChanged="SenhaNovaTextChanged"
                             TextColor="Black" />
                         <ImageButton
                             x:Name="SenhaNovaEntryEYE"
@@ -129,6 +130,16 @@
                             Source="eye.png" />
                     </Grid>
                 </Frame>
+
+                <!--  Mensagem de erro  -->
+                <Label
+                    x:Name="LblErroSenhaNova"
+                    Margin="0,-10,0,0"
+                    FontFamily="sfuitext"
+                    FontSize="14"
+                    IsVisible="False"
+                    Text="*Obrigatório"
+                    TextColor="Red" />
 
                 <!--  Confirmação  -->
                 <Label
@@ -154,6 +165,7 @@
                             IsPassword="True"
                             Keyboard="Default"
                             Placeholder="Confirme a nova senha"
+                            TextChanged="ConfirmacaoSenhaTextChanged"
                             TextColor="Black" />
                         <ImageButton
                             x:Name="ConfirmacaoSenhaEntryEYE"
@@ -165,6 +177,16 @@
                             Source="eye.png" />
                     </Grid>
                 </Frame>
+
+                <!--  Mensagem de erro  -->
+                <Label
+                    x:Name="LblErroConfirmacao"
+                    Margin="0,-10,0,0"
+                    FontFamily="sfuitext"
+                    FontSize="14"
+                    IsVisible="False"
+                    Text="*Obrigatório"
+                    TextColor="Red" />
 
                 <!--  Botão salvar  -->
                 <Button
