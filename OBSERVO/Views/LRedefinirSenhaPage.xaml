@@ -6,139 +6,181 @@
     Title="RedefinirSenhaPage">
 
     <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="15">
-
-            <!--  Senha atual  -->
-            <Label
-                FontFamily="sfuitext"
-                FontSize="16"
-                Text="Senha atual"
-                TextColor="Black" />
-
+        <VerticalStackLayout>
             <Frame
-                x:Name="FrameSenhaAtual"
-                Padding="0"
-                BorderColor="LightGray"
-                CornerRadius="5"
-                HasShadow="False">
-                <Grid>
-                    <Entry
-                        x:Name="SenhaAtualEntry"
-                        BackgroundColor="White"
-                        FontFamily="sfuitext"
-                        FontSize="16"
-                        HeightRequest="50"
-                        HorizontalOptions="FillAndExpand"
-                        IsPassword="True"
-                        Keyboard="Default"
-                        Placeholder="Digite sua senha atual"
-                        TextColor="Black" />
-                    <ImageButton
-                        x:Name="SenhaAtualEntryEYE"
-                        Margin="0,0,10,0"
-                        Padding="10"
-                        BackgroundColor="Transparent"
-                        Clicked="ToggleSenhaAtual"
-                        HeightRequest="24"
-                        HorizontalOptions="End"
-                        Source="eye.png"
-                        WidthRequest="24" />
-                </Grid>
-            </Frame>
-
-            <!--  Mensagem de erro  -->
-            <Label
-                x:Name="LblErroSenhaAtual"
-                FontFamily="sfuitext"
-                FontSize="14"
-                IsVisible="False"
-                Text="Senha incorreta."
-                TextColor="Red" />
-
-            <!--  Senha nova  -->
-            <Label
-                FontFamily="sfuitext"
-                FontSize="16"
-                Text="Senha nova"
-                TextColor="Black" />
-
-            <Frame
-                Padding="0"
-                BorderColor="LightGray"
-                CornerRadius="5"
-                HasShadow="False">
-                <Grid>
-                    <Entry
-                        x:Name="SenhaNovaEntry"
-                        BackgroundColor="White"
-                        FontFamily="sfuitext"
-                        FontSize="16"
-                        HeightRequest="50"
-                        IsPassword="True"
-                        Keyboard="Default"
-                        Placeholder="Digite a nova senha"
-                        TextColor="Black" />
-                    <ImageButton
-                        x:Name="SenhaNovaEntryEYE"
-                        Margin="0,0,10,0"
-                        Padding="10"
-                        BackgroundColor="Transparent"
-                        Clicked="ToggleSenhaNova"
-                        HeightRequest="24"
-                        HorizontalOptions="End"
-                        Source="eye.png"
-                        WidthRequest="24" />
-                </Grid>
-            </Frame>
-
-            <!--  Confirmação  -->
-            <Label
-                FontFamily="sfuitext"
-                FontSize="16"
-                Text="Confirmação"
-                TextColor="Black" />
-
-            <Frame
-                Padding="0"
-                BorderColor="LightGray"
-                CornerRadius="5"
-                HasShadow="False">
-                <Grid>
-                    <Entry
-                        x:Name="ConfirmacaoSenhaEntry"
-                        BackgroundColor="White"
-                        FontFamily="sfuitext"
-                        FontSize="16"
-                        HeightRequest="50"
-                        IsPassword="True"
-                        Keyboard="Default"
-                        Placeholder="Confirme a nova senha"
-                        TextColor="Black" />
-                    <ImageButton
-                        x:Name="ConfirmacaoSenhaEntryEYE"
-                        Margin="0,0,10,0"
-                        Padding="10"
-                        BackgroundColor="Transparent"
-                        Clicked="ToggleConfirmacaoSenha"
-                        HeightRequest="24"
-                        HorizontalOptions="End"
-                        Source="eye.png"
-                        WidthRequest="24" />
-                </Grid>
-            </Frame>
-
-            <!--  Botão salvar  -->
-            <Button
-                Margin="0,30,0,0"
+                Margin="-2,-20,-10,0"
+                Padding="0,14,0,28"
                 BackgroundColor="#740862"
-                Clicked="OnSalvarClicked"
-                CornerRadius="5"
-                FontAttributes="Bold"
-                FontFamily="sfuitext"
-                HeightRequest="50"
-                HorizontalOptions="FillAndExpand"
-                Text="SALVAR"
-                TextColor="White" />
+                CornerRadius="0">
+
+                <HorizontalStackLayout Margin="0,0,0,-8" VerticalOptions="Center">
+
+                    <!--  Área maior para clique  -->
+                    <ContentView Padding="15,16" BackgroundColor="Transparent">
+                        <ContentView.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnBackClicked" />
+                        </ContentView.GestureRecognizers>
+
+                        <!--  Ícone de voltar ...  -->
+                        <Image
+                            Margin="7,10,20,-10"
+                            HeightRequest="20"
+                            Source="backarrow.png"
+                            VerticalOptions="Center"
+                            WidthRequest="20" />
+                    </ContentView>
+
+                    <!--  Texto  -->
+                    <Label
+                        Margin="0,10,0,-10"
+                        FontFamily="sfuitext"
+                        FontSize="20"
+                        Text="Alterar senha"
+                        TextColor="White"
+                        VerticalOptions="Center" />
+                </HorizontalStackLayout>
+
+
+            </Frame>
+
+            <VerticalStackLayout Padding="20" Spacing="15">
+
+                <!--  Senha atual  -->
+                <Label
+                    FontFamily="sfuitext"
+                    FontSize="16"
+                    Text="Senha atual"
+                    TextColor="Black" />
+
+                <Frame
+                    x:Name="FrameSenhaAtual"
+                    Padding="0"
+                    BorderColor="LightGray"
+                    CornerRadius="5"
+                    HasShadow="False">
+                    <Grid>
+                        <Entry
+                            Margin="2,0,0,0"
+                            x:Name="SenhaAtualEntry"
+                            BackgroundColor="White"
+                            FontFamily="sfuitext"
+                            FontSize="16"
+                            HeightRequest="50"
+                            HorizontalOptions="FillAndExpand"
+                            IsPassword="True"
+                            Keyboard="Default"
+                            Placeholder="Digite sua senha atual"
+                            TextColor="Black" />
+                        <ImageButton
+                            x:Name="SenhaAtualEntryEYE"
+                            Margin="0,0,10,0"
+                            Padding="10"
+                            BackgroundColor="Transparent"
+                            Clicked="ToggleSenhaAtual"
+                            HeightRequest="24"
+                            HorizontalOptions="End"
+                            Source="eye.png"
+                            WidthRequest="24" />
+                    </Grid>
+                </Frame>
+
+                <!--  Mensagem de erro  -->
+                <Label
+                    x:Name="LblErroSenhaAtual"
+                    FontFamily="sfuitext"
+                    FontSize="14"
+                    IsVisible="False"
+                    Text="Senha incorreta."
+                    TextColor="Red" />
+
+                <!--  Senha nova  -->
+                <Label
+                    FontFamily="sfuitext"
+                    FontSize="16"
+                    Text="Senha nova"
+                    TextColor="Black" />
+
+                <Frame
+                    Padding="0"
+                    BorderColor="LightGray"
+                    CornerRadius="5"
+                    HasShadow="False">
+                    <Grid>
+                        <Entry
+                            Margin="2,0,0,0"
+                            x:Name="SenhaNovaEntry"
+                            BackgroundColor="White"
+                            FontFamily="sfuitext"
+                            FontSize="16"
+                            HeightRequest="50"
+                            IsPassword="True"
+                            Keyboard="Default"
+                            Placeholder="Digite a nova senha"
+                            TextColor="Black" />
+                        <ImageButton
+                            x:Name="SenhaNovaEntryEYE"
+                            Margin="0,0,10,0"
+                            Padding="10"
+                            BackgroundColor="Transparent"
+                            Clicked="ToggleSenhaNova"
+                            HeightRequest="24"
+                            HorizontalOptions="End"
+                            Source="eye.png"
+                            WidthRequest="24" />
+                    </Grid>
+                </Frame>
+
+                <!--  Confirmação  -->
+                <Label
+                    FontFamily="sfuitext"
+                    FontSize="16"
+                    Text="Confirmação"
+                    TextColor="Black" />
+
+                <Frame
+                    Padding="0"
+                    BorderColor="LightGray"
+                    CornerRadius="5"
+                    HasShadow="False">
+                    <Grid>
+                        <Entry
+                            Margin="2,0,0,0"
+                            x:Name="ConfirmacaoSenhaEntry"
+                            BackgroundColor="White"
+                            FontFamily="sfuitext"
+                            FontSize="16"
+                            HeightRequest="50"
+                            IsPassword="True"
+                            Keyboard="Default"
+                            Placeholder="Confirme a nova senha"
+                            TextColor="Black" />
+                        <ImageButton
+                            x:Name="ConfirmacaoSenhaEntryEYE"
+                            Margin="0,0,10,0"
+                            Padding="10"
+                            BackgroundColor="Transparent"
+                            Clicked="ToggleConfirmacaoSenha"
+                            HeightRequest="24"
+                            HorizontalOptions="End"
+                            Source="eye.png"
+                            WidthRequest="24" />
+                    </Grid>
+                </Frame>
+
+                <!--  Botão salvar  -->
+                <Button
+                    Margin="0,30,0,0"
+                    BackgroundColor="#740862"
+                    Clicked="OnSalvarClicked"
+                    CornerRadius="5"
+                    FontAttributes="Bold"
+                    FontFamily="sfuitext"
+                    HeightRequest="50"
+                    HorizontalOptions="FillAndExpand"
+                    Text="SALVAR"
+                    TextColor="White" />
+
+            </VerticalStackLayout>
 
         </VerticalStackLayout>
     </ScrollView>

@@ -59,4 +59,9 @@ public partial class RedefinirSenhaPage : ContentPage
             return;
         }
     }
+
+    private void OnBackClicked(object sender, TappedEventArgs e)
+    {
+
+    }
 }
