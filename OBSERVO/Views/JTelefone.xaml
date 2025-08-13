@@ -92,6 +92,7 @@
                 <!--  Botão SALVAR  -->
                 <Button
                     x:Name="btnOnSaveClicked"
+                    Margin="0,13,0,0"
                     BackgroundColor="#ccc"
                     CharacterSpacing="0.5"
                     Clicked="onSaveClicked"
