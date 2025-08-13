@@ -101,6 +101,9 @@
 	  <Compile Update="Views\JTelefone.xaml.cs">
 	    <DependentUpon>JTelefone.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Views\LRedefinirSenhaPage.xaml.cs">
+	    <DependentUpon>LRedefinirSenhaPage.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -135,6 +138,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\JTelefone.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\LRedefinirSenhaPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

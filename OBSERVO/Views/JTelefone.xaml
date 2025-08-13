@@ -97,6 +97,7 @@
                     Clicked="onSaveClicked"
                     CornerRadius="8"
                     FontAttributes="Bold"
+                    FontFamily="sfuitext"
                     FontSize="15"
                     HeightRequest="50"
                     ImageSource="save.png"

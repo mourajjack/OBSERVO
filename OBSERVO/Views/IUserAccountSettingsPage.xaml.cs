@@ -101,9 +101,11 @@ public partial class IUserAccountSettingsPage : ContentPage
 
     }
 
-    private void OnSenhaTapped(object sender, TappedEventArgs e)
+    private async void OnSenhaTapped(object sender, TappedEventArgs e)
     {
+        var pagina = new RedefinirSenhaPage();
 
+        await Navigation.PushModalAsync(pagina);
     }
 
     private async void OnEmailTapped(object sender, TappedEventArgs e)
