@@ -1,3 +1,7 @@
+Ôªøusing OBSERVO.Models;
+using System.Text;
+using System.Text.Json;
+
 namespace OBSERVO.Views;
 
 public partial class RedefinirSenhaPage : ContentPage
@@ -21,8 +25,8 @@ public partial class RedefinirSenhaPage : ContentPage
             }
             else
             {
-                //deleta tabela e volta pro inÌcio...
-                //Futuramente trate caso n„o consiga deletar a tabela.
+                //deleta tabela e volta pro in√≠cio...
+                //Futuramente trate caso n√£o consiga deletar a tabela.
                 if (await App.SQLiteDB.DeletarTabelaColaboradoresAsync())
                 {
                     //Volta pro inicio
@@ -43,9 +47,94 @@ public partial class RedefinirSenhaPage : ContentPage
         }
     }
 
-    private void OnSalvarClicked(object sender, EventArgs e)
+    private async void OnSalvarClicked(object sender, EventArgs e)
     {
+        if (string.IsNullOrEmpty(SenhaAtualEntry.Text) || string.IsNullOrEmpty(SenhaNovaEntry.Text) || string.IsNullOrEmpty(ConfirmacaoSenhaEntry.Text))
+            return;
 
+        if((_senha == SenhaAtualEntry.Text) && (SenhaNovaEntry.Text == ConfirmacaoSenhaEntry.Text))
+        {
+            //Comment here
+            LoadingIndicator.IsVisible = true;
+            LoadingIndicator.IsRunning = true;
+            btnOnSaveClicked.IsEnabled = false;
+            SenhaAtualEntry.IsEnabled = false;
+            SenhaNovaEntry.IsEnabled = false;
+            ConfirmacaoSenhaEntry.IsEnabled = false;
+
+            try
+            {
+                var colaborador = await App.SQLiteDB.ColaboradorGetAsync(0);
+                if (colaborador != null)
+                {
+                    //dados
+                    var dados = new SenhaModel
+                    {
+                        Opcao = 1,
+                        aba = colaborador.AbaSheets,
+                        CPF = colaborador.Cpf,
+                        Senha = SenhaNovaEntry.Text
+                    };
+
+                    string json = JsonSerializer.Serialize(dados);
+
+                    using var client = new HttpClient();
+                    var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                    var response = await client.PostAsync(API_DB_CONN.URI_Colaboradores, content);
+                    var respostaJson = await response.Content.ReadAsStringAsync();
+
+                    // Garante que deu sucesso
+                    response.EnsureSuccessStatusCode();
+
+                    var jsonResp = System.Text.Json.JsonDocument.Parse(respostaJson);
+                    if (jsonResp.RootElement.GetProperty("success").GetBoolean())
+                    {
+                        await DisplayAlert("‚úÖ " + "Sucesso", "Senha atualizada com sucesso", "OK");
+                        //Atualizar localDB
+                        //voltar para a p√°gina anterior...
+                        int result = await App.SQLiteDB.AtualizarSenhaAsync(colaborador.Cpf, SenhaNovaEntry.Text);
+                        if (result > 0)
+                        {
+                            //Update Success
+                            //await DisplayAlert("‚úÖ " + TelefoneEntry.Text, "LOCAL DB UPDATE SUCCESS", "OK");
+                            await Navigation.PopModalAsync();
+                        }
+                        else
+                        {
+                            await DisplayAlert("‚ùå  Erro ao salvar", "Verifique sua conex√£o com a internet e tente novamente", "OK");
+                        }
+
+                    }
+                    else
+                    {
+                        await DisplayAlert("‚ùå  Erro de rede", "Verifique sua conex√£o com a internet e tente novamente", "OK");
+                    }
+
+                }
+            }
+            catch (Exception)
+            {
+                await DisplayAlert("‚ùå  Erro de rede", "Verifique sua conex√£o com a internet e tente novamente", "OK");
+                await Navigation.PopModalAsync();
+            }
+
+            //Comment here
+            LoadingIndicator.IsVisible = false;
+            LoadingIndicator.IsRunning = false;
+            btnOnSaveClicked.IsEnabled = true;
+            SenhaAtualEntry.IsEnabled = true;
+            SenhaNovaEntry.IsEnabled = true;
+            ConfirmacaoSenhaEntry.IsEnabled = true;
+
+        }
+        else
+        {
+            if(_senha != SenhaAtualEntry.Text)
+            LblErroSenhaAtual.IsVisible = true;
+
+            await DisplayAlert("‚ùå Erro", "Senha incorreta", "OK");
+        }
     }
 
     private void ToggleConfirmacaoSenha(object sender, EventArgs e)
@@ -103,10 +192,10 @@ public partial class RedefinirSenhaPage : ContentPage
 
     private async void SenhaAtualTextChanged(object sender, TextChangedEventArgs e)
     {
-        // Texto antes da mudanÁa
+        // Texto antes da mudan√ßa
         string textoAnterior = e.OldTextValue;
 
-        // Texto atual (apÛs a mudanÁa)
+        // Texto atual (ap√≥s a mudan√ßa)
         string textoNovo = e.NewTextValue;
 
         // Detecta se foi apagado um caractere
@@ -162,10 +251,10 @@ public partial class RedefinirSenhaPage : ContentPage
     private void SenhaNovaTextChanged(object sender, TextChangedEventArgs e)
     {
 
-        // Texto antes da mudanÁa
+        // Texto antes da mudan√ßa
         string textoAnterior = e.OldTextValue;
 
-        // Texto atual (apÛs a mudanÁa)
+        // Texto atual (ap√≥s a mudan√ßa)
         string textoNovo = e.NewTextValue;
 
         // Detecta se foi apagado um caractere
@@ -174,7 +263,7 @@ public partial class RedefinirSenhaPage : ContentPage
         {
             if (string.IsNullOrEmpty(SenhaNovaEntry.Text))
             {
-                LblErroSenhaNova.Text = "ObrigatÛrio";
+                LblErroSenhaNova.Text = "Obrigat√≥rio";
                 btnOnSaveClicked.IsEnabled = false;
                 btnOnSaveClicked.BackgroundColor = Color.FromArgb("#ccc");
                 return;
@@ -184,7 +273,7 @@ public partial class RedefinirSenhaPage : ContentPage
         if(SenhaNovaEntry.Text.Length < 4)
         {
             LblErroSenhaNova.IsVisible = true;
-            LblErroSenhaNova.Text = "MÌnimo de 4 dÌgitos";
+            LblErroSenhaNova.Text = "M√≠nimo de 4 d√≠gitos";
             btnOnSaveClicked.IsEnabled = false;
             btnOnSaveClicked.BackgroundColor = Color.FromArgb("#ccc");
         }
@@ -211,10 +300,10 @@ public partial class RedefinirSenhaPage : ContentPage
 
     private void ConfirmacaoSenhaTextChanged(object sender, TextChangedEventArgs e)
     {
-        // Texto antes da mudanÁa
+        // Texto antes da mudan√ßa
         string textoAnterior = e.OldTextValue;
 
-        // Texto atual (apÛs a mudanÁa)
+        // Texto atual (ap√≥s a mudan√ßa)
         string textoNovo = e.NewTextValue;
 
         // Detecta se foi apagado um caractere
@@ -224,7 +313,7 @@ public partial class RedefinirSenhaPage : ContentPage
             if (string.IsNullOrEmpty(ConfirmacaoSenhaEntry.Text))
             {
                 LblErroConfirmacao.IsVisible = true;
-                LblErroConfirmacao.Text = "ObrigatÛrio";
+                LblErroConfirmacao.Text = "Obrigat√≥rio";
                 btnOnSaveClicked.IsEnabled = false;
                 btnOnSaveClicked.BackgroundColor = Color.FromArgb("#ccc");
                 return;

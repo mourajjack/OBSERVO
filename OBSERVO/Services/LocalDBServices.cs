@@ -61,6 +61,21 @@ namespace OBSERVO.Services
             return 0; // não encontrou
         }
 
+        public async Task<int> AtualizarSenhaAsync(string cpf, string novaSenha)
+        {
+            var colaborador = await localDB.Table<Colaboradores>()
+                                           .Where(c => c.Cpf == cpf)
+                                           .FirstOrDefaultAsync();
+
+            if (colaborador != null)
+            {
+                colaborador.Senha = novaSenha;
+                return await localDB.UpdateAsync(colaborador);
+            }
+
+            return 0; // não encontrou
+        }
+
         public async Task CriaTabelaColaboradores()
         {
              localDB.CreateTableAsync<Colaboradores>().Wait();

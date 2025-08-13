@@ -207,6 +207,16 @@
 
             </VerticalStackLayout>
 
+            <ActivityIndicator
+                x:Name="LoadingIndicator"
+                HeightRequest="50"
+                HorizontalOptions="Center"
+                IsRunning="False"
+                IsVisible="False"
+                VerticalOptions="Center"
+                WidthRequest="50"
+                Color="#740862" />
+
         </VerticalStackLayout>
     </ScrollView>
 
