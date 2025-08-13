@@ -124,8 +124,11 @@ public partial class RedefinirSenhaPage : ContentPage
                 else
                 {
                     LblErroSenhaAtual.IsVisible = false;
-                    btnOnSaveClicked.IsEnabled = true;
-                    btnOnSaveClicked.BackgroundColor = Color.FromArgb("#740862");
+                    if (!(string.IsNullOrEmpty(SenhaNovaEntry.Text)) && !(string.IsNullOrEmpty(ConfirmacaoSenhaEntry.Text))) 
+                    {
+                        btnOnSaveClicked.IsEnabled = true;
+                        btnOnSaveClicked.BackgroundColor = Color.FromArgb("#740862");
+                    }
                 }
             }
             else
@@ -147,8 +150,11 @@ public partial class RedefinirSenhaPage : ContentPage
             else
             {
                 LblErroSenhaAtual.IsVisible = false;
-                btnOnSaveClicked.IsEnabled = true;
-                btnOnSaveClicked.BackgroundColor = Color.FromArgb("#740862");
+                if (!(string.IsNullOrEmpty(SenhaNovaEntry.Text)) && !(string.IsNullOrEmpty(ConfirmacaoSenhaEntry.Text)))
+                {
+                    btnOnSaveClicked.IsEnabled = true;
+                    btnOnSaveClicked.BackgroundColor = Color.FromArgb("#740862");
+                }
             }
         }
     }
