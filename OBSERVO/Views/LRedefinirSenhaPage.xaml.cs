@@ -152,6 +152,12 @@ public partial class RedefinirSenhaPage : ContentPage
             if(_senha != SenhaAtualEntry.Text)
             LblErroSenhaAtual.IsVisible = true;
 
+            if(SenhaNovaEntry.Text != ConfirmacaoSenhaEntry.Text)
+            {
+                LblErroConfirmacao.IsVisible = true;
+                LblErroConfirmacao.Text = "As senhas devem ser iguais";
+            }
+
             await DisplayAlert("❌ Erro", "Senha incorreta", "OK");
         }
     }
