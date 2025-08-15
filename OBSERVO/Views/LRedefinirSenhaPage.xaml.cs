@@ -52,7 +52,26 @@ public partial class RedefinirSenhaPage : ContentPage
         if (string.IsNullOrEmpty(SenhaAtualEntry.Text) || string.IsNullOrEmpty(SenhaNovaEntry.Text) || string.IsNullOrEmpty(ConfirmacaoSenhaEntry.Text))
             return;
 
-        if((_senha == SenhaAtualEntry.Text) && (SenhaNovaEntry.Text == ConfirmacaoSenhaEntry.Text))
+        //pode ser que dê erro nessa linha, se tiver valor null or empty:
+        if (ConfirmacaoSenhaEntry.Text.Length < 4)
+        {
+            LblErroConfirmacao.IsVisible = true;
+            LblErroConfirmacao.Text = "Mínimo de 4 dígitos";
+            btnOnSaveClicked.IsEnabled = false;
+            btnOnSaveClicked.BackgroundColor = Color.FromArgb("#ccc");
+            return;
+        }
+        //pode ser que dê erro nessa linha, se tiver valor null or empty:
+        if (SenhaNovaEntry.Text.Length < 4)
+        {
+            LblErroSenhaNova.IsVisible = true;
+            LblErroSenhaNova.Text = "Mínimo de 4 dígitos";
+            btnOnSaveClicked.IsEnabled = false;
+            btnOnSaveClicked.BackgroundColor = Color.FromArgb("#ccc");
+            return;
+        }
+
+        if ((_senha == SenhaAtualEntry.Text) && (SenhaNovaEntry.Text == ConfirmacaoSenhaEntry.Text))
         {
             //Comment here
             LoadingIndicator.IsVisible = true;
