@@ -22,12 +22,14 @@
             <!--  Campo Usuário  -->
             <VerticalStackLayout Spacing="5">
                 <Label
+                    FontAttributes="Bold"
                     FontFamily="sfuitext"
                     FontSize="16"
                     Text="Usuário"
-                    TextColor="Black" />
+                    TextColor="#2f2f2f" />
                 <Entry
                     x:Name="UsuarioEmpty"
+                    Margin="0,-5,0,0"
                     BackgroundColor="Transparent"
                     FontAttributes="Bold"
                     FontFamily="sfuitext"
@@ -35,19 +37,21 @@
                     HeightRequest="50"
                     Placeholder="CPF, e-mail ou telefone"
                     PlaceholderColor="Gray"
-                    TextColor="Black" />
+                    TextColor="#2f2f2f" />
             </VerticalStackLayout>
 
             <!--  Campo Senha  -->
             <VerticalStackLayout Spacing="5">
                 <Label
+                    FontAttributes="Bold"
                     FontFamily="sfuitext"
                     FontSize="16"
                     Text="Senha"
-                    TextColor="Black" />
+                    TextColor="#2f2f2f" />
                 <Grid>
                     <Entry
                         x:Name="SenhaEntry"
+                        Margin="0,-5,0,0"
                         BackgroundColor="Transparent"
                         FontAttributes="Bold"
                         FontFamily="sfuitext"
@@ -56,7 +60,7 @@
                         IsPassword="True"
                         Placeholder="Mínimo de 8 dígitos"
                         PlaceholderColor="Gray"
-                        TextColor="Black" />
+                        TextColor="#2f2f2f" />
                     <!--  Ícone de exibir senha, falta a lógica  -->
                     <ImageButton
                         x:Name="Eye"
@@ -86,7 +90,7 @@
                 CornerRadius="8"
                 FontAttributes="Bold"
                 FontFamily="sfuitext"
-                FontSize="15"
+                FontSize="16"
                 HeightRequest="50"
                 ImageSource="signin.png"
                 Text="ENTRAR"

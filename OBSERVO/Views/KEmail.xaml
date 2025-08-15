@@ -52,7 +52,7 @@
                     Margin="0,20,0,0"
                     FontAttributes="Bold"
                     FontFamily="sfuitext"
-                    FontSize="15.5"
+                    FontSize="16"
                     HorizontalTextAlignment="Start"
                     Text="Atualmente, o e-mail vinculado à sua conta Gest-Seg é: "
                     TextColor="#2f2f2f" />
@@ -60,7 +60,7 @@
                 <Label
                     FontAttributes="Bold"
                     FontFamily="sfuitext"
-                    FontSize="15.5"
+                    FontSize="16"
                     HorizontalTextAlignment="Start"
                     Text="Caso queira alterar, informe um e-mail válido abaixo:"
                     TextColor="#2f2f2f" />

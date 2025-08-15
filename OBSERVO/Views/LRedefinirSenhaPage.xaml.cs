@@ -215,8 +215,11 @@ public partial class RedefinirSenhaPage : ContentPage
                     LblErroSenhaAtual.IsVisible = false;
                     if (!(string.IsNullOrEmpty(SenhaNovaEntry.Text)) && !(string.IsNullOrEmpty(ConfirmacaoSenhaEntry.Text))) 
                     {
-                        btnOnSaveClicked.IsEnabled = true;
-                        btnOnSaveClicked.BackgroundColor = Color.FromArgb("#740862");
+                        if (SenhaNovaEntry.Text.Length >=4 && ConfirmacaoSenhaEntry.Text.Length >= 4)
+                        {
+                            btnOnSaveClicked.IsEnabled = true;
+                            btnOnSaveClicked.BackgroundColor = Color.FromArgb("#740862");
+                        }
                     }
                 }
             }
@@ -241,8 +244,11 @@ public partial class RedefinirSenhaPage : ContentPage
                 LblErroSenhaAtual.IsVisible = false;
                 if (!(string.IsNullOrEmpty(SenhaNovaEntry.Text)) && !(string.IsNullOrEmpty(ConfirmacaoSenhaEntry.Text)))
                 {
-                    btnOnSaveClicked.IsEnabled = true;
-                    btnOnSaveClicked.BackgroundColor = Color.FromArgb("#740862");
+                    if (SenhaNovaEntry.Text.Length >= 4 && ConfirmacaoSenhaEntry.Text.Length >= 4)
+                    {
+                        btnOnSaveClicked.IsEnabled = true;
+                        btnOnSaveClicked.BackgroundColor = Color.FromArgb("#740862");
+                    }
                 }
             }
         }
@@ -279,6 +285,7 @@ public partial class RedefinirSenhaPage : ContentPage
         }
         else
         {
+            LblErroSenhaNova.IsVisible = false;
             if (SenhaNovaEntry.Text == ConfirmacaoSenhaEntry.Text) 
             {
                 LblErroConfirmacao.IsVisible = false;
@@ -286,8 +293,11 @@ public partial class RedefinirSenhaPage : ContentPage
                 //testa para habilitar SALVAR
                 if (!(string.IsNullOrEmpty(SenhaAtualEntry.Text)) && !(string.IsNullOrEmpty(SenhaNovaEntry.Text)) && !(string.IsNullOrEmpty(ConfirmacaoSenhaEntry.Text)))
                 {
-                    btnOnSaveClicked.IsEnabled = true;
-                    btnOnSaveClicked.BackgroundColor = Color.FromArgb("#740862");
+                    if(SenhaAtualEntry.Text == _senha) 
+                    {
+                        btnOnSaveClicked.IsEnabled = true;
+                        btnOnSaveClicked.BackgroundColor = Color.FromArgb("#740862");
+                    }
                 }
             }
             else
@@ -320,6 +330,15 @@ public partial class RedefinirSenhaPage : ContentPage
             }
         }
 
+        if (ConfirmacaoSenhaEntry.Text.Length < 4)
+        {
+            LblErroConfirmacao.IsVisible = true;
+            LblErroConfirmacao.Text = "Mínimo de 4 dígitos";
+            btnOnSaveClicked.IsEnabled = false;
+            btnOnSaveClicked.BackgroundColor = Color.FromArgb("#ccc");
+            return;
+        }
+
         if (SenhaNovaEntry.Text != ConfirmacaoSenhaEntry.Text)
         {
             LblErroConfirmacao.IsVisible = true;
@@ -334,8 +353,11 @@ public partial class RedefinirSenhaPage : ContentPage
                 //testa para habilitar SALVAR
                 if (!(string.IsNullOrEmpty(SenhaAtualEntry.Text)) && !(string.IsNullOrEmpty(SenhaNovaEntry.Text)) && !(string.IsNullOrEmpty(ConfirmacaoSenhaEntry.Text)))
                 {
-                    btnOnSaveClicked.IsEnabled = true;
-                    btnOnSaveClicked.BackgroundColor = Color.FromArgb("#740862");
+                    if (SenhaAtualEntry.Text == _senha)
+                    {
+                        btnOnSaveClicked.IsEnabled = true;
+                        btnOnSaveClicked.BackgroundColor = Color.FromArgb("#740862");
+                    }
                 }
             }
         }
